@@ -1,18 +1,25 @@
 #include "stm32f4xx.h"
 #include "gpio_driver.h"
+#include "uart_driver.h"
 
-#define NOAF 					0
-
-#define GREENLED			12
-#define ORANGELED			13
-#define REDLED				14
-#define BLUELED				15
+#define PORTB_USART3_TX			10
+#define PORTB_USART3_RX			11
 
 void turnLedOn(GPIO_TypeDef *gpioX, uint8_t ledColor);
 
 int main(void){
-	gpioInit(GPIOD, BLUELED, OUTPUT, PUSHPULL, MEDIUMSPEED, NOPULL, NOAF);
-	turnLedOn(GPIOD, BLUELED);
+	//Init PB10: Tx and PB11: Rx
+	gpioInit(GPIOB, PORTB_USART3_TX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
+	gpioInit(GPIOB, PORTB_USART3_RX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
+
+
+	
+
+	uartInit(USART3, IS_8_BITS_DATA, IS_1_STOP_BIT, DISABLE_PARITY, OVER_BY_16, 9600);
+
+	
+	
+	sendString(USART3, "con heo", 7);
 	return 0;
 }
 
