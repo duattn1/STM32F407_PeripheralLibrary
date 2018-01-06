@@ -1,0 +1,49 @@
+\hypertarget{main_8c}{}\section{Src/main.c File Reference}
+\label{main_8c}\index{Src/main.\+c@{Src/main.\+c}}
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Include/gpio\+\_\+driver.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Include/uart\+\_\+driver.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a09da96b3fdf3272de918e17bed470826}{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX}~10
+\item 
+\#define \hyperlink{main_8c_a7ba7d25fd56ba1b55200f3b3397e2c4a}{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX}~11
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8c_ac44fa9bc633a284940adaf82804562a5}{turn\+Led\+On} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpioX, uint8\+\_\+t led\+Color)
+\item 
+int \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a7ba7d25fd56ba1b55200f3b3397e2c4a}\label{main_8c_a7ba7d25fd56ba1b55200f3b3397e2c4a}} 
+\index{main.\+c@{main.\+c}!P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX@{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX}}
+\index{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX@{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX}{PORTB\_USART3\_RX}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+RX~11}
+
+\mbox{\Hypertarget{main_8c_a09da96b3fdf3272de918e17bed470826}\label{main_8c_a09da96b3fdf3272de918e17bed470826}} 
+\index{main.\+c@{main.\+c}!P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX@{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX}}
+\index{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX@{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX}{PORTB\_USART3\_TX}}
+{\footnotesize\ttfamily \#define P\+O\+R\+T\+B\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+TX~10}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ac44fa9bc633a284940adaf82804562a5}\label{main_8c_ac44fa9bc633a284940adaf82804562a5}} 
+\index{main.\+c@{main.\+c}!turn\+Led\+On@{turn\+Led\+On}}
+\index{turn\+Led\+On@{turn\+Led\+On}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{turn\+Led\+On()}{turnLedOn()}}
+{\footnotesize\ttfamily void turn\+Led\+On (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpioX,  }\item[{uint8\+\_\+t}]{led\+Color }\end{DoxyParamCaption})}
+

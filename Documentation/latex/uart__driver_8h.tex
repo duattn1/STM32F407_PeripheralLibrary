@@ -1,0 +1,224 @@
+\hypertarget{uart__driver_8h}{}\section{Include/uart\+\_\+driver.h File Reference}
+\label{uart__driver_8h}\index{Include/uart\+\_\+driver.\+h@{Include/uart\+\_\+driver.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uart__driver_8h_a997aab9e1c4bfeb6eedcad0754323d60}{A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}~16000000
+\item 
+\#define \hyperlink{uart__driver_8h_ad51d57b4ff984673919d5f254d9b485c}{A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}~32000000
+\item 
+\#define \hyperlink{uart__driver_8h_a7129f13333f2a7218838cc32fe507bfa}{U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE}~0x80
+\item 
+\#define \hyperlink{uart__driver_8h_a6c872baa46a6b0d7a93f127f16b5fd6a}{I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}~0x00
+\item 
+\#define \hyperlink{uart__driver_8h_a075aa474a29f90c3071622685ac5f542}{I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}~0x01
+\item 
+\#define \hyperlink{uart__driver_8h_ab825a57056e3c8551020ad7b90c8690f}{I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}~0x00
+\item 
+\#define \hyperlink{uart__driver_8h_a0fc2d11d442e0e628d90ed610391ffea}{I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}~0x01
+\item 
+\#define \hyperlink{uart__driver_8h_ac628e8c6c80a14ab8f24830d73928d3c}{I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}~0x02
+\item 
+\#define \hyperlink{uart__driver_8h_aa64feeddb8b561f7580f16f388d40b07}{I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}~0x03
+\item 
+\#define \hyperlink{uart__driver_8h_affea90ed8a0680fc0db4c1629ce1cb0f}{D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}~0x00
+\item 
+\#define \hyperlink{uart__driver_8h_a16d32fa5024fa0198dc1a8516c14c89d}{E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}~0x01
+\item 
+\#define \hyperlink{uart__driver_8h_a6a5ef86be1038b15d6717880962d84a5}{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16}~0x00
+\item 
+\#define \hyperlink{uart__driver_8h_a561f39f50b5f06f3512319ea7d330345}{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8}~0x01
+\item 
+\#define \hyperlink{uart__driver_8h_ad21793d976aaace868cd30096d6a5b2d}{\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B2\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B2\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T1\+EN)
+\item 
+\#define \hyperlink{uart__driver_8h_ae34a47848d4b94e743abb41aeccedf3f}{\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T2\+EN)
+\item 
+\#define \hyperlink{uart__driver_8h_a38dcfd8a6c170eba0c54f993cc4b508c}{\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T3\+EN)
+\item 
+\#define \hyperlink{uart__driver_8h_abeb82982c15efe57cbe808f5f6564461}{\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+A\+R\+T4\+EN)
+\item 
+\#define \hyperlink{uart__driver_8h_abb702f7a72217178ea4cd432d7043589}{\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+A\+R\+T5\+EN)
+\item 
+\#define \hyperlink{uart__driver_8h_a139adce5cdf3d25814d410e2d8019990}{\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}()~(R\+CC-\/$>$A\+P\+B2\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B2\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T6\+EN)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart__driver_8h_af96f7f5b06b838cd1df1b32873d46bb9}{uart\+Init} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t word\+Length, uint8\+\_\+t stop\+Bit\+Number, uint8\+\_\+t parity\+Enable, uint8\+\_\+t oversampling, uint32\+\_\+t baudrate)
+\item 
+void \hyperlink{uart__driver_8h_a2cfec86da7b6f4c2a0ff3f185e43e991}{send\+Char} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t character)
+\item 
+void \hyperlink{uart__driver_8h_a6cfbfe2e06f00a77766fb4bf15680e22}{send\+String} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, char text\mbox{[}$\,$\mbox{]}, int length)
+\item 
+uint8\+\_\+t \hyperlink{uart__driver_8h_a015af3981628bf8dd1addaea39952e16}{get\+Char} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{uart__driver_8h_a085c00a2637f9ddb1f4d49fc41732aab}{get\+String} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t buff\mbox{[}$\,$\mbox{]}, uint8\+\_\+t length)
+\item 
+uint16\+\_\+t \hyperlink{uart__driver_8h_acb7644118ef4d791b51a5de6423d0b4f}{baudrate\+Mantissa\+Cal} (uint32\+\_\+t src\+Clk, uint32\+\_\+t baudrate, uint8\+\_\+t oversampling)
+\item 
+uint16\+\_\+t \hyperlink{uart__driver_8h_acc9b8baf020dd605e733bd283b0c3fcf}{baudrate\+Fraction\+Cal} (uint32\+\_\+t src\+Clk, uint32\+\_\+t baudrate, uint8\+\_\+t oversampling)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{uart__driver_8h_abeb82982c15efe57cbe808f5f6564461}\label{uart__driver_8h_abeb82982c15efe57cbe808f5f6564461}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_UART4\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+A\+R\+T4\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+A\+R\+T4\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_abb702f7a72217178ea4cd432d7043589}\label{uart__driver_8h_abb702f7a72217178ea4cd432d7043589}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_UART5\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+A\+R\+T5\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+A\+R\+T5\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_ad21793d976aaace868cd30096d6a5b2d}\label{uart__driver_8h_ad21793d976aaace868cd30096d6a5b2d}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_USART1\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+S\+A\+R\+T1\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B2\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B2\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T1\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_ae34a47848d4b94e743abb41aeccedf3f}\label{uart__driver_8h_ae34a47848d4b94e743abb41aeccedf3f}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_USART2\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+S\+A\+R\+T2\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T2\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_a38dcfd8a6c170eba0c54f993cc4b508c}\label{uart__driver_8h_a38dcfd8a6c170eba0c54f993cc4b508c}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_USART3\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+S\+A\+R\+T3\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B1\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B1\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T3\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_a139adce5cdf3d25814d410e2d8019990}\label{uart__driver_8h_a139adce5cdf3d25814d410e2d8019990}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{\_USART6\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+U\+S\+A\+R\+T6\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(R\+CC-\/$>$A\+P\+B2\+E\+NR $\vert$= R\+C\+C\+\_\+\+A\+P\+B2\+E\+N\+R\+\_\+\+U\+S\+A\+R\+T6\+EN)}
+
+\mbox{\Hypertarget{uart__driver_8h_a997aab9e1c4bfeb6eedcad0754323d60}\label{uart__driver_8h_a997aab9e1c4bfeb6eedcad0754323d60}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED@{A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}}
+\index{A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED@{A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}{APB1\_CLK\_SPEED}}
+{\footnotesize\ttfamily \#define A\+P\+B1\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED~16000000}
+
+\mbox{\Hypertarget{uart__driver_8h_ad51d57b4ff984673919d5f254d9b485c}\label{uart__driver_8h_ad51d57b4ff984673919d5f254d9b485c}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED@{A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}}
+\index{A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED@{A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED}{APB2\_CLK\_SPEED}}
+{\footnotesize\ttfamily \#define A\+P\+B2\+\_\+\+C\+L\+K\+\_\+\+S\+P\+E\+ED~32000000}
+
+\mbox{\Hypertarget{uart__driver_8h_affea90ed8a0680fc0db4c1629ce1cb0f}\label{uart__driver_8h_affea90ed8a0680fc0db4c1629ce1cb0f}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY@{D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}}
+\index{D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY@{D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}{DISABLE\_PARITY}}
+{\footnotesize\ttfamily \#define D\+I\+S\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY~0x00}
+
+\mbox{\Hypertarget{uart__driver_8h_a16d32fa5024fa0198dc1a8516c14c89d}\label{uart__driver_8h_a16d32fa5024fa0198dc1a8516c14c89d}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY@{E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY@{E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY}{ENABLE\_PARITY}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+P\+A\+R\+I\+TY~0x01}
+
+\mbox{\Hypertarget{uart__driver_8h_a0fc2d11d442e0e628d90ed610391ffea}\label{uart__driver_8h_a0fc2d11d442e0e628d90ed610391ffea}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}}
+\index{I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}{IS\_0DOT5\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+0\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT~0x01}
+
+\mbox{\Hypertarget{uart__driver_8h_ab825a57056e3c8551020ad7b90c8690f}\label{uart__driver_8h_ab825a57056e3c8551020ad7b90c8690f}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}}
+\index{I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}{IS\_1\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+1\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT~0x00}
+
+\mbox{\Hypertarget{uart__driver_8h_aa64feeddb8b561f7580f16f388d40b07}\label{uart__driver_8h_aa64feeddb8b561f7580f16f388d40b07}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}}
+\index{I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}{IS\_1DOT5\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+1\+D\+O\+T5\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT~0x03}
+
+\mbox{\Hypertarget{uart__driver_8h_ac628e8c6c80a14ab8f24830d73928d3c}\label{uart__driver_8h_ac628e8c6c80a14ab8f24830d73928d3c}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}}
+\index{I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT@{I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT}{IS\_2\_STOP\_BIT}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+2\+\_\+\+S\+T\+O\+P\+\_\+\+B\+IT~0x02}
+
+\mbox{\Hypertarget{uart__driver_8h_a6c872baa46a6b0d7a93f127f16b5fd6a}\label{uart__driver_8h_a6c872baa46a6b0d7a93f127f16b5fd6a}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA@{I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}}
+\index{I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA@{I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}{IS\_8\_BITS\_DATA}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+8\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA~0x00}
+
+\mbox{\Hypertarget{uart__driver_8h_a075aa474a29f90c3071622685ac5f542}\label{uart__driver_8h_a075aa474a29f90c3071622685ac5f542}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA@{I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}}
+\index{I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA@{I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA}{IS\_9\_BITS\_DATA}}
+{\footnotesize\ttfamily \#define I\+S\+\_\+9\+\_\+\+B\+I\+T\+S\+\_\+\+D\+A\+TA~0x01}
+
+\mbox{\Hypertarget{uart__driver_8h_a6a5ef86be1038b15d6717880962d84a5}\label{uart__driver_8h_a6a5ef86be1038b15d6717880962d84a5}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16@{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16}}
+\index{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16@{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16}{OVER\_BY\_16}}
+{\footnotesize\ttfamily \#define O\+V\+E\+R\+\_\+\+B\+Y\+\_\+16~0x00}
+
+\mbox{\Hypertarget{uart__driver_8h_a561f39f50b5f06f3512319ea7d330345}\label{uart__driver_8h_a561f39f50b5f06f3512319ea7d330345}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8@{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8}}
+\index{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8@{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8}{OVER\_BY\_8}}
+{\footnotesize\ttfamily \#define O\+V\+E\+R\+\_\+\+B\+Y\+\_\+8~0x01}
+
+\mbox{\Hypertarget{uart__driver_8h_a7129f13333f2a7218838cc32fe507bfa}\label{uart__driver_8h_a7129f13333f2a7218838cc32fe507bfa}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE@{U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE}}
+\index{U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE@{U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE}{USART\_FLAG\_TXE}}
+{\footnotesize\ttfamily \#define U\+S\+A\+R\+T\+\_\+\+F\+L\+A\+G\+\_\+\+T\+XE~0x80}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uart__driver_8h_acc9b8baf020dd605e733bd283b0c3fcf}\label{uart__driver_8h_acc9b8baf020dd605e733bd283b0c3fcf}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!baudrate\+Fraction\+Cal@{baudrate\+Fraction\+Cal}}
+\index{baudrate\+Fraction\+Cal@{baudrate\+Fraction\+Cal}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{baudrate\+Fraction\+Cal()}{baudrateFractionCal()}}
+{\footnotesize\ttfamily uint16\+\_\+t baudrate\+Fraction\+Cal (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{src\+Clk,  }\item[{uint32\+\_\+t}]{baudrate,  }\item[{uint8\+\_\+t}]{oversampling }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_acb7644118ef4d791b51a5de6423d0b4f}\label{uart__driver_8h_acb7644118ef4d791b51a5de6423d0b4f}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!baudrate\+Mantissa\+Cal@{baudrate\+Mantissa\+Cal}}
+\index{baudrate\+Mantissa\+Cal@{baudrate\+Mantissa\+Cal}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{baudrate\+Mantissa\+Cal()}{baudrateMantissaCal()}}
+{\footnotesize\ttfamily uint16\+\_\+t baudrate\+Mantissa\+Cal (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{src\+Clk,  }\item[{uint32\+\_\+t}]{baudrate,  }\item[{uint8\+\_\+t}]{oversampling }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_a015af3981628bf8dd1addaea39952e16}\label{uart__driver_8h_a015af3981628bf8dd1addaea39952e16}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!get\+Char@{get\+Char}}
+\index{get\+Char@{get\+Char}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{get\+Char()}{getChar()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Char (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_a085c00a2637f9ddb1f4d49fc41732aab}\label{uart__driver_8h_a085c00a2637f9ddb1f4d49fc41732aab}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ get\+String (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{buff\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_a2cfec86da7b6f4c2a0ff3f185e43e991}\label{uart__driver_8h_a2cfec86da7b6f4c2a0ff3f185e43e991}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!send\+Char@{send\+Char}}
+\index{send\+Char@{send\+Char}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{send\+Char()}{sendChar()}}
+{\footnotesize\ttfamily void send\+Char (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{character }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_a6cfbfe2e06f00a77766fb4bf15680e22}\label{uart__driver_8h_a6cfbfe2e06f00a77766fb4bf15680e22}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!send\+String@{send\+String}}
+\index{send\+String@{send\+String}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{send\+String()}{sendString()}}
+{\footnotesize\ttfamily void send\+String (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{char}]{text\mbox{[}$\,$\mbox{]},  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8h_af96f7f5b06b838cd1df1b32873d46bb9}\label{uart__driver_8h_af96f7f5b06b838cd1df1b32873d46bb9}} 
+\index{uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}!uart\+Init@{uart\+Init}}
+\index{uart\+Init@{uart\+Init}!uart\+\_\+driver.\+h@{uart\+\_\+driver.\+h}}
+\subsubsection{\texorpdfstring{uart\+Init()}{uartInit()}}
+{\footnotesize\ttfamily void uart\+Init (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{word\+Length,  }\item[{uint8\+\_\+t}]{stop\+Bit\+Number,  }\item[{uint8\+\_\+t}]{parity\+Enable,  }\item[{uint8\+\_\+t}]{oversampling,  }\item[{uint32\+\_\+t}]{baudrate }\end{DoxyParamCaption})}
+

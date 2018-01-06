@@ -1,0 +1,65 @@
+\hypertarget{uart__driver_8c}{}\section{Src/uart\+\_\+driver.c File Reference}
+\label{uart__driver_8c}\index{Src/uart\+\_\+driver.\+c@{Src/uart\+\_\+driver.\+c}}
+{\ttfamily \#include \char`\"{}../\+Include/uart\+\_\+driver.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart__driver_8c_af96f7f5b06b838cd1df1b32873d46bb9}{uart\+Init} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t word\+Length, uint8\+\_\+t stop\+Bit\+Number, uint8\+\_\+t parity\+Enable, uint8\+\_\+t oversampling, uint32\+\_\+t baudrate)
+\item 
+void \hyperlink{uart__driver_8c_a2cfec86da7b6f4c2a0ff3f185e43e991}{send\+Char} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t character)
+\item 
+void \hyperlink{uart__driver_8c_a6cfbfe2e06f00a77766fb4bf15680e22}{send\+String} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, char text\mbox{[}$\,$\mbox{]}, int length)
+\item 
+uint8\+\_\+t \hyperlink{uart__driver_8c_a015af3981628bf8dd1addaea39952e16}{get\+Char} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX)
+\item 
+uint8\+\_\+t $\ast$ \hyperlink{uart__driver_8c_a085c00a2637f9ddb1f4d49fc41732aab}{get\+String} (U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$uartX, uint8\+\_\+t buff\mbox{[}$\,$\mbox{]}, uint8\+\_\+t length)
+\item 
+uint16\+\_\+t \hyperlink{uart__driver_8c_acb7644118ef4d791b51a5de6423d0b4f}{baudrate\+Mantissa\+Cal} (uint32\+\_\+t src\+Clk, uint32\+\_\+t baudrate, uint8\+\_\+t oversampling)
+\item 
+uint16\+\_\+t \hyperlink{uart__driver_8c_acc9b8baf020dd605e733bd283b0c3fcf}{baudrate\+Fraction\+Cal} (uint32\+\_\+t src\+Clk, uint32\+\_\+t baudrate, uint8\+\_\+t oversampling)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{uart__driver_8c_acc9b8baf020dd605e733bd283b0c3fcf}\label{uart__driver_8c_acc9b8baf020dd605e733bd283b0c3fcf}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!baudrate\+Fraction\+Cal@{baudrate\+Fraction\+Cal}}
+\index{baudrate\+Fraction\+Cal@{baudrate\+Fraction\+Cal}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{baudrate\+Fraction\+Cal()}{baudrateFractionCal()}}
+{\footnotesize\ttfamily uint16\+\_\+t baudrate\+Fraction\+Cal (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{src\+Clk,  }\item[{uint32\+\_\+t}]{baudrate,  }\item[{uint8\+\_\+t}]{oversampling }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_acb7644118ef4d791b51a5de6423d0b4f}\label{uart__driver_8c_acb7644118ef4d791b51a5de6423d0b4f}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!baudrate\+Mantissa\+Cal@{baudrate\+Mantissa\+Cal}}
+\index{baudrate\+Mantissa\+Cal@{baudrate\+Mantissa\+Cal}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{baudrate\+Mantissa\+Cal()}{baudrateMantissaCal()}}
+{\footnotesize\ttfamily uint16\+\_\+t baudrate\+Mantissa\+Cal (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{src\+Clk,  }\item[{uint32\+\_\+t}]{baudrate,  }\item[{uint8\+\_\+t}]{oversampling }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_a015af3981628bf8dd1addaea39952e16}\label{uart__driver_8c_a015af3981628bf8dd1addaea39952e16}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!get\+Char@{get\+Char}}
+\index{get\+Char@{get\+Char}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{get\+Char()}{getChar()}}
+{\footnotesize\ttfamily uint8\+\_\+t get\+Char (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_a085c00a2637f9ddb1f4d49fc41732aab}\label{uart__driver_8c_a085c00a2637f9ddb1f4d49fc41732aab}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ get\+String (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{buff\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_a2cfec86da7b6f4c2a0ff3f185e43e991}\label{uart__driver_8c_a2cfec86da7b6f4c2a0ff3f185e43e991}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!send\+Char@{send\+Char}}
+\index{send\+Char@{send\+Char}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{send\+Char()}{sendChar()}}
+{\footnotesize\ttfamily void send\+Char (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{character }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_a6cfbfe2e06f00a77766fb4bf15680e22}\label{uart__driver_8c_a6cfbfe2e06f00a77766fb4bf15680e22}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!send\+String@{send\+String}}
+\index{send\+String@{send\+String}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{send\+String()}{sendString()}}
+{\footnotesize\ttfamily void send\+String (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{char}]{text\mbox{[}$\,$\mbox{]},  }\item[{int}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uart__driver_8c_af96f7f5b06b838cd1df1b32873d46bb9}\label{uart__driver_8c_af96f7f5b06b838cd1df1b32873d46bb9}} 
+\index{uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}!uart\+Init@{uart\+Init}}
+\index{uart\+Init@{uart\+Init}!uart\+\_\+driver.\+c@{uart\+\_\+driver.\+c}}
+\subsubsection{\texorpdfstring{uart\+Init()}{uartInit()}}
+{\footnotesize\ttfamily void uart\+Init (\begin{DoxyParamCaption}\item[{U\+S\+A\+R\+T\+\_\+\+Type\+Def $\ast$}]{uartX,  }\item[{uint8\+\_\+t}]{word\+Length,  }\item[{uint8\+\_\+t}]{stop\+Bit\+Number,  }\item[{uint8\+\_\+t}]{parity\+Enable,  }\item[{uint8\+\_\+t}]{oversampling,  }\item[{uint32\+\_\+t}]{baudrate }\end{DoxyParamCaption})}
+
