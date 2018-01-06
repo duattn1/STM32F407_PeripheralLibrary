@@ -1,6 +1,18 @@
+/** @file uart_driver.h
+ *  @brief Function implementation for the uart driver.
+ *
+ *  This contains the function inplementation for the uart driver
+ *	and also macros, constants, variables needed.
+ *
+ *  @author 	Tran Nhat Duat (duattn)
+ *	@version 	V0.1
+ * 	@date    	04-Jan-2018
+ */
+ 
 #include "../Include/uart_driver.h"
 
 void uartInit(USART_TypeDef *uartX, uint8_t wordLength, uint8_t stopBitNumber, uint8_t parityEnable, uint8_t oversampling, uint32_t baudrate){
+	/* Turn on the clock for the UART to be configured */
 	if(uartX == USART1) _USART1_CLK_ENABLE();
 	else if(uartX == USART2) _USART2_CLK_ENABLE();
 	else if(uartX == USART3) _USART3_CLK_ENABLE();
@@ -8,16 +20,22 @@ void uartInit(USART_TypeDef *uartX, uint8_t wordLength, uint8_t stopBitNumber, u
 	else if(uartX == UART5) _UART5_CLK_ENABLE();
 	else if(uartX == USART6) _USART6_CLK_ENABLE();
 	
-	//config word length
+	/* Configure length of data bits */
 	uartX->CR1 |= wordLength << 12;
-	//config stop bits
+	
+	/* Configure number of stop bit(s) */
 	uartX->CR2 &= ~(0x03 << 12);
 	uartX->CR2 |= stopBitNumber << 12;
-	//config parity check
+	/* Configure parity check */
 	uartX->CR1 |= parityEnable << 10;	
-	//config oversampling rate
+	/* Configure oversampling rate */
 	uartX->CR1 |= oversampling << 15;
-	//config baudrate
+
+	/**
+	 *	Configure baudrate
+	 *	Bit [3:0] is for fraction setup
+	 *	Bit [15:4] is for mantissa setup
+	 */
 	if(uartX == USART1 || uartX == USART6){ 
 		uint16_t mantissa, fraction;
 		fraction = baudrateFractionCal(APB2_CLK_SPEED, baudrate, oversampling);
@@ -32,11 +50,11 @@ void uartInit(USART_TypeDef *uartX, uint8_t wordLength, uint8_t stopBitNumber, u
 		uartX->BRR |= mantissa << 4;
 	}
 	
-	//enable transmission
+	/* Enable transmission */
 	uartX->CR1 |= 1 << 3;
-	//enable reception
+	/* Enable reception */
 	uartX->CR1 |= 1 << 2;
-	//enable UART
+	/* Enable UART */
 	uartX->CR1 |= 1 << 13;
 }
 
