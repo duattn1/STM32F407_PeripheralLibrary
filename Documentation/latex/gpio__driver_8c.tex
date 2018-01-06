@@ -1,15 +1,36 @@
 \hypertarget{gpio__driver_8c}{}\section{Src/gpio\+\_\+driver.c File Reference}
 \label{gpio__driver_8c}\index{Src/gpio\+\_\+driver.\+c@{Src/gpio\+\_\+driver.\+c}}
+
+
+Function implementation for the gpio driver.  
+
+
 {\ttfamily \#include \char`\"{}../\+Include/gpio\+\_\+driver.\+h\char`\"{}}\newline
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{gpio__driver_8c_a77d3b6d3d5caeceb82edea347229fe48}{gpio\+Init} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpioX, uint8\+\_\+t pin\+Number, uint8\+\_\+t mode, uint8\+\_\+t type, uint8\+\_\+t speed\+Type, uint8\+\_\+t pull\+Type, uint8\+\_\+t alt\+Function)
-\item 
+\begin{DoxyCompactList}\small\item\em Configure a G\+P\+IO pin. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{gpio__driver_8c_a05dfb45880a2aff188f7d0857cc12684}{gpio\+Read\+From\+Pin} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpioX, uint8\+\_\+t pin\+Number)
-\item 
+\begin{DoxyCompactList}\small\item\em Read a G\+P\+IO pin. \end{DoxyCompactList}\item 
 void \hyperlink{gpio__driver_8c_a918e800a26ac7b7b9a2be57a35e729ca}{gpio\+Write\+To\+Pin} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$gpioX, uint8\+\_\+t pin\+Number, uint8\+\_\+t value)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Write a G\+P\+IO pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Function implementation for the gpio driver. 
+
+This contains the function implementation for the gpio driver.
+
+\begin{DoxyAuthor}{Author}
+Tran Nhat Duat (duattn) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+02-\/\+Jan-\/2018 
+\end{DoxyDate}
 
 
 \subsection{Function Documentation}
@@ -19,15 +40,67 @@ void \hyperlink{gpio__driver_8c_a918e800a26ac7b7b9a2be57a35e729ca}{gpio\+Write\+
 \subsubsection{\texorpdfstring{gpio\+Init()}{gpioInit()}}
 {\footnotesize\ttfamily void gpio\+Init (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpioX,  }\item[{uint8\+\_\+t}]{pin\+Number,  }\item[{uint8\+\_\+t}]{mode,  }\item[{uint8\+\_\+t}]{type,  }\item[{uint8\+\_\+t}]{speed\+Type,  }\item[{uint8\+\_\+t}]{pull\+Type,  }\item[{uint8\+\_\+t}]{alt\+Function }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{gpio__driver_8c_a05dfb45880a2aff188f7d0857cc12684}\label{gpio__driver_8c_a05dfb45880a2aff188f7d0857cc12684}} 
+
+
+Configure a G\+P\+IO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpioX} & The address of G\+P\+IO port whose pin to be configured. \\
+\hline
+{\em pin\+Number} & The pin to be configured. \\
+\hline
+{\em mode} & The mode of the pin. \\
+\hline
+{\em type} & The output type of the pin. \\
+\hline
+{\em speed\+Type} & The output speed of the pin. \\
+\hline
+{\em pull\+Type} & Selection the pull-\/up/pull-\/down with the pin. \\
+\hline
+{\em alt\+Function} & The alternative function configuration of the pin when mode is AF.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}
+Configure the pin alternate function if pin mode is AF Each pin has 4 bit to configure the alternate function. Therefore, 16 pins of each port are configured with 4$\ast$16 = 64 bits (equals to 2 register\+: A\+F\+RL \& A\+F\+RH)\mbox{\Hypertarget{gpio__driver_8c_a05dfb45880a2aff188f7d0857cc12684}\label{gpio__driver_8c_a05dfb45880a2aff188f7d0857cc12684}} 
 \index{gpio\+\_\+driver.\+c@{gpio\+\_\+driver.\+c}!gpio\+Read\+From\+Pin@{gpio\+Read\+From\+Pin}}
 \index{gpio\+Read\+From\+Pin@{gpio\+Read\+From\+Pin}!gpio\+\_\+driver.\+c@{gpio\+\_\+driver.\+c}}
 \subsubsection{\texorpdfstring{gpio\+Read\+From\+Pin()}{gpioReadFromPin()}}
 {\footnotesize\ttfamily uint8\+\_\+t gpio\+Read\+From\+Pin (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpioX,  }\item[{uint8\+\_\+t}]{pin\+Number }\end{DoxyParamCaption})}
 
+
+
+Read a G\+P\+IO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpioX} & The address of G\+P\+IO port whose pin to be read. \\
+\hline
+{\em pin\+Number} & The pin to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{gpio__driver_8c_a918e800a26ac7b7b9a2be57a35e729ca}\label{gpio__driver_8c_a918e800a26ac7b7b9a2be57a35e729ca}} 
 \index{gpio\+\_\+driver.\+c@{gpio\+\_\+driver.\+c}!gpio\+Write\+To\+Pin@{gpio\+Write\+To\+Pin}}
 \index{gpio\+Write\+To\+Pin@{gpio\+Write\+To\+Pin}!gpio\+\_\+driver.\+c@{gpio\+\_\+driver.\+c}}
 \subsubsection{\texorpdfstring{gpio\+Write\+To\+Pin()}{gpioWriteToPin()}}
 {\footnotesize\ttfamily void gpio\+Write\+To\+Pin (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{gpioX,  }\item[{uint8\+\_\+t}]{pin\+Number,  }\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
 
+
+
+Write a G\+P\+IO pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gpioX} & The address of G\+P\+IO port whose pin to be written. \\
+\hline
+{\em pin\+Number} & The pin to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void. 
+\end{DoxyReturn}

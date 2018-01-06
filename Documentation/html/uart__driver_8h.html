@@ -69,6 +69,9 @@ $(function() {
 <div class="title">uart_driver.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Function prototypes for the uart driver.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;stm32f4xx.h&quot;</code><br />
 </div>
@@ -118,21 +121,39 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af96f7f5b06b838cd1df1b32873d46bb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#af96f7f5b06b838cd1df1b32873d46bb9">uartInit</a> (USART_TypeDef *uartX, uint8_t wordLength, uint8_t stopBitNumber, uint8_t parityEnable, uint8_t oversampling, uint32_t baudrate)</td></tr>
+<tr class="memdesc:af96f7f5b06b838cd1df1b32873d46bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a UART.  <a href="#af96f7f5b06b838cd1df1b32873d46bb9">More...</a><br /></td></tr>
 <tr class="separator:af96f7f5b06b838cd1df1b32873d46bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cfec86da7b6f4c2a0ff3f185e43e991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#a2cfec86da7b6f4c2a0ff3f185e43e991">sendChar</a> (USART_TypeDef *uartX, uint8_t character)</td></tr>
+<tr class="memdesc:a2cfec86da7b6f4c2a0ff3f185e43e991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a character over UART.  <a href="#a2cfec86da7b6f4c2a0ff3f185e43e991">More...</a><br /></td></tr>
 <tr class="separator:a2cfec86da7b6f4c2a0ff3f185e43e991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cfbfe2e06f00a77766fb4bf15680e22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#a6cfbfe2e06f00a77766fb4bf15680e22">sendString</a> (USART_TypeDef *uartX, char text[], int length)</td></tr>
+<tr class="memdesc:a6cfbfe2e06f00a77766fb4bf15680e22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a string over UART.  <a href="#a6cfbfe2e06f00a77766fb4bf15680e22">More...</a><br /></td></tr>
 <tr class="separator:a6cfbfe2e06f00a77766fb4bf15680e22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a015af3981628bf8dd1addaea39952e16"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#a015af3981628bf8dd1addaea39952e16">getChar</a> (USART_TypeDef *uartX)</td></tr>
+<tr class="memdesc:a015af3981628bf8dd1addaea39952e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a character from UART.  <a href="#a015af3981628bf8dd1addaea39952e16">More...</a><br /></td></tr>
 <tr class="separator:a015af3981628bf8dd1addaea39952e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085c00a2637f9ddb1f4d49fc41732aab"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#a085c00a2637f9ddb1f4d49fc41732aab">getString</a> (USART_TypeDef *uartX, uint8_t buff[], uint8_t length)</td></tr>
+<tr class="memdesc:a085c00a2637f9ddb1f4d49fc41732aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive a string from UART.  <a href="#a085c00a2637f9ddb1f4d49fc41732aab">More...</a><br /></td></tr>
 <tr class="separator:a085c00a2637f9ddb1f4d49fc41732aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb7644118ef4d791b51a5de6423d0b4f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#acb7644118ef4d791b51a5de6423d0b4f">baudrateMantissaCal</a> (uint32_t srcClk, uint32_t baudrate, uint8_t oversampling)</td></tr>
+<tr class="memdesc:acb7644118ef4d791b51a5de6423d0b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the mantissa of the baudrate to be write into UART baudrate register.  <a href="#acb7644118ef4d791b51a5de6423d0b4f">More...</a><br /></td></tr>
 <tr class="separator:acb7644118ef4d791b51a5de6423d0b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc9b8baf020dd605e733bd283b0c3fcf"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart__driver_8h.html#acc9b8baf020dd605e733bd283b0c3fcf">baudrateFractionCal</a> (uint32_t srcClk, uint32_t baudrate, uint8_t oversampling)</td></tr>
+<tr class="memdesc:acc9b8baf020dd605e733bd283b0c3fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the fraction of the baudrate to be write into UART baudrate register.  <a href="#acc9b8baf020dd605e733bd283b0c3fcf">More...</a><br /></td></tr>
 <tr class="separator:acc9b8baf020dd605e733bd283b0c3fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Function prototypes for the uart driver. </p>
+<p>Function implementation for the uart driver.</p>
+<p>This contains the function prototypes for the uart driver and also macros, constants, variables needed.</p>
+<dl class="section author"><dt>Author</dt><dd>Tran Nhat Duat (duattn) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>V0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04-Jan-2018</dd></dl>
+<p>This contains the function inplementation for the uart driver and also macros, constants, variables needed.</p>
+<dl class="section author"><dt>Author</dt><dd>Tran Nhat Duat (duattn) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>V0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>04-Jan-2018 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="abeb82982c15efe57cbe808f5f6564461"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abeb82982c15efe57cbe808f5f6564461">&#9670;&nbsp;</a></span>_UART4_CLK_ENABLE</h2>
 
@@ -450,6 +471,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculate the fraction of the baudrate to be write into UART baudrate register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcClk</td><td>The clock value of the UART bus. </td></tr>
+    <tr><td class="paramname">baudrate</td><td>The baudrate value to be configured. </td></tr>
+    <tr><td class="paramname">oversampling</td><td>The oversampling rate mode, which is from the function <a class="el" href="uart__driver_8h.html#af96f7f5b06b838cd1df1b32873d46bb9" title="Configure a UART. ">uartInit()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t. </dd></dl>
+
 </div>
 </div>
 <a id="acb7644118ef4d791b51a5de6423d0b4f"></a>
@@ -484,6 +516,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Calculate the mantissa of the baudrate to be write into UART baudrate register. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcClk</td><td>The clock value of the UART bus. </td></tr>
+    <tr><td class="paramname">baudrate</td><td>The baudrate value to be configured. </td></tr>
+    <tr><td class="paramname">oversampling</td><td>The oversampling rate mode, which is from the function <a class="el" href="uart__driver_8h.html#af96f7f5b06b838cd1df1b32873d46bb9" title="Configure a UART. ">uartInit()</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint16_t. </dd></dl>
+
 </div>
 </div>
 <a id="a015af3981628bf8dd1addaea39952e16"></a>
@@ -501,6 +544,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Receive a character from UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uartX</td><td>The address of UART which has a string to be received.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t. </dd></dl>
 
 </div>
 </div>
@@ -536,6 +588,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Receive a string from UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uartX</td><td>The address of UART which has a string to be received. </td></tr>
+    <tr><td class="paramname">buff</td><td>The buffer to temporarily stored the received string. </td></tr>
+    <tr><td class="paramname">length</td><td>The length of the string to be received.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t pointer. </dd></dl>
+
 </div>
 </div>
 <a id="a2cfec86da7b6f4c2a0ff3f185e43e991"></a>
@@ -563,6 +626,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Send a character over UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uartX</td><td>The address of UART which has a character to be sent. </td></tr>
+    <tr><td class="paramname">character</td><td>The character to be sent.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
 </div>
 </div>
@@ -597,6 +670,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Send a string over UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uartX</td><td>The address of UART which has a string to be sent. </td></tr>
+    <tr><td class="paramname">text</td><td>The string to be sent. </td></tr>
+    <tr><td class="paramname">length</td><td>The length of the string to be sent.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
 </div>
 </div>
@@ -649,6 +733,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Configure a UART. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uartX</td><td>The address of UART to be configured. </td></tr>
+    <tr><td class="paramname">wordLength</td><td>The length of data bits. </td></tr>
+    <tr><td class="paramname">stopBitNumber</td><td>The number of stop bit(s). </td></tr>
+    <tr><td class="paramname">parityEnable</td><td>Selection to enable/disable the parity check. </td></tr>
+    <tr><td class="paramname">oversampling</td><td>Selection of oversampling rate by 8 or 16. </td></tr>
+    <tr><td class="paramname">baudrate</td><td>The baudrate to be configured.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
+<p>Configure baudrate Bit [3:0] is for fraction setup Bit [15:4] is for mantissa setup</p>
 
 </div>
 </div>

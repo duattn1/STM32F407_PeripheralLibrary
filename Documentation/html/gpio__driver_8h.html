@@ -69,6 +69,9 @@ $(function() {
 <div class="title">gpio_driver.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Function prototypes for the gpio driver.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;stm32f4xx.h&quot;</code><br />
 </div>
@@ -156,13 +159,22 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a77d3b6d3d5caeceb82edea347229fe48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__driver_8h.html#a77d3b6d3d5caeceb82edea347229fe48">gpioInit</a> (GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t mode, uint8_t type, uint8_t speedType, uint8_t pullType, uint8_t altFunction)</td></tr>
+<tr class="memdesc:a77d3b6d3d5caeceb82edea347229fe48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure a GPIO pin.  <a href="#a77d3b6d3d5caeceb82edea347229fe48">More...</a><br /></td></tr>
 <tr class="separator:a77d3b6d3d5caeceb82edea347229fe48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05dfb45880a2aff188f7d0857cc12684"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__driver_8h.html#a05dfb45880a2aff188f7d0857cc12684">gpioReadFromPin</a> (GPIO_TypeDef *gpioX, uint8_t pinNumber)</td></tr>
+<tr class="memdesc:a05dfb45880a2aff188f7d0857cc12684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a GPIO pin.  <a href="#a05dfb45880a2aff188f7d0857cc12684">More...</a><br /></td></tr>
 <tr class="separator:a05dfb45880a2aff188f7d0857cc12684"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918e800a26ac7b7b9a2be57a35e729ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gpio__driver_8h.html#a918e800a26ac7b7b9a2be57a35e729ca">gpioWriteToPin</a> (GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t value)</td></tr>
+<tr class="memdesc:a918e800a26ac7b7b9a2be57a35e729ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a GPIO pin.  <a href="#a918e800a26ac7b7b9a2be57a35e729ca">More...</a><br /></td></tr>
 <tr class="separator:a918e800a26ac7b7b9a2be57a35e729ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Function prototypes for the gpio driver. </p>
+<p>This contains the function prototypes for the gpio driver and also macros, constants, variables needed.</p>
+<dl class="section author"><dt>Author</dt><dd>Tran Nhat Duat (duattn) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>V0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>02-Jan-2018 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="aede0c28799dfd566c36853208d69113b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aede0c28799dfd566c36853208d69113b">&#9670;&nbsp;</a></span>_GPIOA_CLK_ENABLE</h2>
 
@@ -764,6 +776,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Configure a GPIO pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpioX</td><td>The address of GPIO port whose pin to be configured. </td></tr>
+    <tr><td class="paramname">pinNumber</td><td>The pin to be configured. </td></tr>
+    <tr><td class="paramname">mode</td><td>The mode of the pin. </td></tr>
+    <tr><td class="paramname">type</td><td>The output type of the pin. </td></tr>
+    <tr><td class="paramname">speedType</td><td>The output speed of the pin. </td></tr>
+    <tr><td class="paramname">pullType</td><td>Selection the pull-up/pull-down with the pin. </td></tr>
+    <tr><td class="paramname">altFunction</td><td>The alternative function configuration of the pin when mode is AF.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
+<p>Configure the pin alternate function if pin mode is AF Each pin has 4 bit to configure the alternate function. Therefore, 16 pins of each port are configured with 4*16 = 64 bits (equals to 2 register: AFRL &amp; AFRH)</p>
+
 </div>
 </div>
 <a id="a05dfb45880a2aff188f7d0857cc12684"></a>
@@ -791,6 +819,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Read a GPIO pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpioX</td><td>The address of GPIO port whose pin to be read. </td></tr>
+    <tr><td class="paramname">pinNumber</td><td>The pin to be read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t. </dd></dl>
 
 </div>
 </div>
@@ -825,6 +863,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Write a GPIO pin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpioX</td><td>The address of GPIO port whose pin to be written. </td></tr>
+    <tr><td class="paramname">pinNumber</td><td>The pin to be written.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>void. </dd></dl>
 
 </div>
 </div>
