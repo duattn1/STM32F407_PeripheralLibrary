@@ -394,6 +394,16 @@
               <FileType>1</FileType>
               <FilePath>.\Src\uart_driver.c</FilePath>
             </File>
+            <File>
+              <FileName>mfrc522.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\mfrc522.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\spi_driver.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -408,6 +418,16 @@
               <FileName>uart_driver.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Include\uart_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>mfrc522.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\mfrc522.h</FilePath>
+            </File>
+            <File>
+              <FileName>spi_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\spi_driver.h</FilePath>
             </File>
           </Files>
         </Group>

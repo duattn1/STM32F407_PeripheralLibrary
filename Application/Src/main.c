@@ -1,6 +1,7 @@
 #include "stm32f4xx.h"
 #include "../Include/gpio_driver.h"
 #include "../Include/uart_driver.h"
+#include "../Include/gpio_driver.h"
 
 #define PORTB_USART3_TX			10
 #define PORTB_USART3_RX			11
@@ -10,7 +11,7 @@ void turnLedOn(GPIO_TypeDef *gpioX, uint8_t ledColor);
 
 int main(void){
 		
-	//Init PB10: Tx and PB11: Rx
+	/*//Init PB10: Tx and PB11: Rx
 	gpioInit(GPIOB, PORTB_USART3_TX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
 	gpioInit(GPIOB, PORTB_USART3_RX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);	
 
@@ -18,8 +19,11 @@ int main(void){
 	
 	sendString(USART3, "con heo", 7);
 	
+	
 	//gpioInit(GPIOD, REDLED, OUTPUT, PUSHPULL, LOWSPEED, NOPULL, NOAF);
-	//turnLedOn(GPIOD, REDLED);
+	//turnLedOn(GPIOD, REDLED);*/
+	
+	
 	while(1){
 		
 	}
