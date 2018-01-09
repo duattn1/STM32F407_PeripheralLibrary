@@ -12,7 +12,11 @@ void tearDown(){
 int runAllTest(void){	
 	UNITY_BEGIN();
 
-	RUN_TEST(ut_gpioInit);
+	/* GPIO Driver UnitTest */
+	for(uint8_t i; i < numberOfTestcase; i++){
+		RUN_TEST(f[i]);
+	}
+	
 	
 	UNITY_END();
 }
