@@ -432,7 +432,35 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>UnitTesting</GroupName>
+          <Files>
+            <File>
+              <FileName>ut_gpio_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UnitTesting\ut_gpio_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>unity.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UnitTesting\unity\unity.c</FilePath>
+            </File>
+            <File>
+              <FileName>ut_utilities.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UnitTesting\utilities\ut_utilities.c</FilePath>
+            </File>
+            <File>
+              <FileName>ut_main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UnitTesting\ut_main.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
+        </Group>
+        <Group>
+          <GroupName>::Compiler</GroupName>
         </Group>
         <Group>
           <GroupName>::Device</GroupName>
@@ -446,6 +474,24 @@
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.0.0" condition="Cortex-M ARMv8-M Device">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.0.0-Beta4"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Compiler" Cgroup="I/O" Csub="STDERR" Cvariant="ITM" Cvendor="Keil" Cversion="1.1.0" condition="ARMCC Cortex-M with ITM">
+        <package name="ARM_Compiler" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.1"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Compiler" Cgroup="I/O" Csub="STDIN" Cvariant="ITM" Cvendor="Keil" Cversion="1.1.0" condition="ARMCC Cortex-M with ITM">
+        <package name="ARM_Compiler" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.1"/>
+        <targetInfos>
+          <targetInfo name="Target 1"/>
+        </targetInfos>
+      </component>
+      <component Cclass="Compiler" Cgroup="I/O" Csub="STDOUT" Cvariant="ITM" Cvendor="Keil" Cversion="1.1.0" condition="ARMCC Cortex-M with ITM">
+        <package name="ARM_Compiler" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="Keil" version="1.1.1"/>
         <targetInfos>
           <targetInfo name="Target 1"/>
         </targetInfos>

@@ -1,16 +1,15 @@
-#include "stm32f4xx.h"
 #include "../Include/gpio_driver.h"
 #include "../Include/uart_driver.h"
-#include "../Include/gpio_driver.h"
+
+#include "../UnitTesting/ut_main.h"
+//#include "../UnitTesting/unity/unity.h"
+//#include "../UnitTesting/ut_gpio_driver.h"
 
 #define PORTB_USART3_TX			10
 #define PORTB_USART3_RX			11
 
-void turnLedOn(GPIO_TypeDef *gpioX, uint8_t ledColor);
-
 
 int main(void){
-		
 	/*//Init PB10: Tx and PB11: Rx
 	gpioInit(GPIOB, PORTB_USART3_TX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
 	gpioInit(GPIOB, PORTB_USART3_RX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);	
@@ -24,13 +23,7 @@ int main(void){
 	//turnLedOn(GPIOD, REDLED);*/
 	
 	
-	while(1){
-		
-	}
+	runAllTest();
 	return 0;
-}
-
-void turnLedOn(GPIO_TypeDef *gpioX, uint8_t ledColor){
-	gpioWriteToPin(gpioX, ledColor, 1);
 }
 

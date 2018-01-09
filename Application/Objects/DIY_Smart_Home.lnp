@@ -4,6 +4,11 @@
 ".\objects\uart_driver.o"
 ".\objects\mfrc522.o"
 ".\objects\spi_driver.o"
+".\objects\ut_gpio_driver.o"
+".\objects\unity.o"
+".\objects\ut_utilities.o"
+".\objects\ut_main.o"
+".\objects\retarget_io.o"
 ".\objects\startup_stm32f407xx.o"
 ".\objects\system_stm32f4xx.o"
 --ro-base 0x08000000 --entry 0x08000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --summary_stderr --info summarysizes --map --xref --callgraph --symbols
