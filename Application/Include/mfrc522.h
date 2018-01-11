@@ -3,10 +3,12 @@
 
 #include <stdint.h>
 #include "stm32f4xx.h"
+#include "spi_driver.h"
+#include "gpio_driver.h"
 
 #define NULL 0
 
-static uint8_t _selectPin = 99;
+static uint8_t _selectPin = 12;
 static uint8_t _resetPin = 99;
 
 typedef enum{

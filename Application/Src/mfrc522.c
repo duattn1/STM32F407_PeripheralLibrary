@@ -9,7 +9,7 @@ void mfrc522PinSelect(uint8_t selectPin, uint8_t resetPin){
 
 void PCD_Init(void){
 	Bool hardReset = False;
-	
+	///xxxx
 	/* Config _selectPin & _resetPin as OUTPUT*/
 
 	/* DO NOT select the slave yet = set _selectPin to LOW*/ 
@@ -17,6 +17,7 @@ void PCD_Init(void){
 	/* Hard reset */
 	
 	/*  Init SPI: 8-bits data mode*/
+	spiInit(SPI2, SPI_MASTER, SPI_CLOCK_DIV_2, SPI_UNIDIRECTION, SPI_FIRST_CLOCK, SPI_CK_TO_0, SPI_8BITS_DATA, SPI_MSB_FIRST);
 	
 	/* Reset baudrate */
 	
@@ -27,15 +28,15 @@ uint8_t PCD_ReadRegister(PCD_Register reg){
 	uint8_t value;
 	
 	/* Select slave */
-	//digitalWrite(_chipSelectPin, LOW);	
+	gpioWriteToPin(GPIOB, _selectPin, 0);
 
 	/* Send the reg over SPI */
-	//SPI.transfer(0x80 | reg);					// MSB == 1 is for reading. LSB is not used in address. Datasheet section 8.1.2.3.
+	spiSend(SPI2, 0x80 | reg);					// MSB == 1 is for reading. LSB is not used in address. Datasheet section 8.1.2.3.
 	/* Read the value back. Send 0 to stop reading */
 	//value = SPI.transfer(0);		
 	
 	/* Deselect slave */
-	
+	gpioWriteToPin(GPIOB, _selectPin, 1);
 	return value;
 }
 
@@ -74,14 +75,14 @@ void PCD_ReadRegisterValues(PCD_Register reg, uint8_t count, uint8_t *values, ui
 
 void PCD_WriteRegister(PCD_Register reg, uint8_t value){
 	/* Select slave */
-	//digitalWrite(_chipSelectPin, LOW);	
+	gpioWriteToPin(GPIOB, _selectPin, 0);	
 
 	/* Send the reg over SPI */
 	
 	/* Send the value over SPI */
 	
 	/* Deselect slave */
-	
+	gpioWriteToPin(GPIOB, _selectPin, 1);
 	/////* Stop SPI */
 }
 

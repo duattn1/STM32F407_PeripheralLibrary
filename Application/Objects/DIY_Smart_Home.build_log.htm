@@ -22,91 +22,15 @@ Dialog DLL:      TCM.DLL V1.14.14.0
  
 <h2>Project:</h2>
 E:\C\GIT\STM32F4_Smart_Home\Application\DIY_Smart_Home.uvprojx
-Project File Date:  01/09/2018
+Project File Date:  01/11/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Target 1'
-compiling gpio_driver.c...
-compiling main.c...
-Src\../UnitTesting/utilities/ut_utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_UTILITIES_H_ */
-Src\../UnitTesting/ut_gpio_driver.h(44): warning:  #66-D: enumeration value is out of "int" range
-        PIN_15_CONFIG_BY_2BIT_MASK              = 0xC0000000,
-Src\../UnitTesting/ut_gpio_driver.h(54): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_GPIO_DRIVER_H_ */
-Src\../UnitTesting/ut_main.h(10): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_MAIN_H */
-Src\main.c(26): warning:  #223-D: function "runAllTest" declared implicitly
-        runAllTest();
-Src\main.c: 5 warnings, 0 errors
-compiling uart_driver.c...
-compiling mfrc522.c...
-Src\mfrc522.c(11): warning:  #177-D: variable "hardReset" was declared but never referenced
-        Bool hardReset = False;
-Src\mfrc522.c(47): warning:  #177-D: variable "address" was declared but never referenced
-        uint8_t address = 0x80 | reg;                           // MSB == 1 is for reading. LSB is not used in address. Datasheet section 8.1.2.3.
-Src\mfrc522.c(320): warning:  #188-D: enumerated type mixed with another type
-        result = 0;//duatPCD_TransceiveData(buffer, sizeof(buffer), NULL, 0);
-Src\mfrc522.c(481): warning:  #188-D: enumerated type mixed with another type
-                        invertedError = (c1 != (~c1_ & 0xF)) || (c2 != (~c2_ & 0xF)) || (c3 != (~c3_ & 0xF));
-Src\mfrc522.c(495): warning:  #188-D: enumerated type mixed with another type
-                        firstInGroup = (group == 3) || (group != (blockOffset + 1) / 5);
-Src\mfrc522.c(510): warning:  #177-D: variable "value" was declared but never referenced
-                        int32_t value = ((int32_t)buffer[3]<<24) | ((int32_t)buffer[2]<<16) | ((int32_t)buffer[1]<<8) | (int32_t)buffer[0];
-Src\mfrc522.c: 6 warnings, 0 errors
-compiling spi_driver.c...
-compiling ut_gpio_driver.c...
-UnitTesting\utilities/ut_utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_UTILITIES_H_ */
-UnitTesting\ut_gpio_driver.h(44): warning:  #66-D: enumeration value is out of "int" range
-        PIN_15_CONFIG_BY_2BIT_MASK              = 0xC0000000,
-UnitTesting\ut_gpio_driver.h(54): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_GPIO_DRIVER_H_ */
-UnitTesting\ut_gpio_driver.c(38): warning:  #167-D: argument of type "volatile uint32_t *" is incompatible with parameter of type "uint32_t *"
-        
-EST_ASSERT_EQUAL_HEX32( mode << (2*pinNumber),                  PIN_0_CONFIG_BY_2BIT_MASK & readRegister(&GPIOA->MODER));
-UnitTesting\ut_gpio_driver.c(39): warning:  #167-D: argument of type "volatile uint32_t *" is incompatible with parameter of type "uint32_t *"
-        
-EST_ASSERT_EQUAL_HEX32( type << pinNumber,                                      PIN_0_CONFIG_BY_1BIT_MASK & readRegister(&GPIOA->OTYPER));
-UnitTesting\ut_gpio_driver.c(40): warning:  #167-D: argument of type "volatile uint32_t *" is incompatible with parameter of type "uint32_t *"
-        
-EST_ASSERT_EQUAL_HEX32( speedType << (2*pinNumber),     PIN_0_CONFIG_BY_2BIT_MASK & readRegister(&GPIOA->OSPEEDR));
-UnitTesting\ut_gpio_driver.c(41): warning:  #167-D: argument of type "volatile uint32_t *" is incompatible with parameter of type "uint32_t *"
-        
-EST_ASSERT_EQUAL_HEX32( pullType << (2*pinNumber) ,     PIN_0_CONFIG_BY_2BIT_MASK & readRegister(&GPIOA->PUPDR));
-UnitTesting\ut_gpio_driver.c: 7 warnings, 0 errors
-compiling unity.c...
-compiling ut_utilities.c...
-UnitTesting\utilities\ut_utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_UTILITIES_H_ */
-UnitTesting\utilities\ut_utilities.c(5): warning:  #1-D: last line of file ends without a newline
-  }
-UnitTesting\utilities\ut_utilities.c: 2 warnings, 0 errors
-compiling ut_main.c...
-UnitTesting\utilities/ut_utilities.h(9): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_UTILITIES_H_ */
-UnitTesting\ut_gpio_driver.h(44): warning:  #66-D: enumeration value is out of "int" range
-        PIN_15_CONFIG_BY_2BIT_MASK              = 0xC0000000,
-UnitTesting\ut_gpio_driver.h(54): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_GPIO_DRIVER_H_ */
-UnitTesting\ut_main.h(10): warning:  #1-D: last line of file ends without a newline
-  #endif /* UT_MAIN_H */
-UnitTesting\ut_main.c(17): warning:  #167-D: argument of type "void (*)(GPIO_TypeDef *)" is incompatible with parameter of type "UnityTestFunction"
-                
-UN_TEST(f[i]);
-UnitTesting\ut_main.c(22): warning:  #1-D: last line of file ends without a newline
-  }
-UnitTesting\ut_main.c(22): warning:  #940-D: missing return statement at end of non-void function "runAllTest"
-  }
-UnitTesting\ut_main.c: 7 warnings, 0 errors
-compiling retarget_io.c...
-assembling startup_stm32f407xx.s...
-compiling system_stm32f4xx.c...
+Build target 'Target 1'
 linking...
-Program Size: Code=5284 RO-data=968 RW-data=32 ZI-data=2088  
+Program Size: Code=5352 RO-data=968 RW-data=32 ZI-data=2088  
 FromELF: creating hex file...
-".\Objects\DIY_Smart_Home.axf" - 0 Error(s), 27 Warning(s).
+".\Objects\DIY_Smart_Home.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -154,7 +78,7 @@ Package Vendor: Keil
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

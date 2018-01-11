@@ -7,3 +7,4 @@
 uint32_t readRegister(uint32_t *address);
 
 #endif /* UT_UTILITIES_H_ */
+
