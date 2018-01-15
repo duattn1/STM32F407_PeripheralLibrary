@@ -6,11 +6,12 @@
 #define PORTB_USART3_TX			10
 #define PORTB_USART3_RX			11
 
+extern int runAllTest(void);
 
 int main(void){
 	gpioInit(GPIOD, 14, OUTPUT, PUSHPULL, VERYHIGHSPEED, NOPULL, NOAF);
-	gpioWriteToPin(GPIOD, 14, 1);
-	
+	//gpioPinConfigLock(GPIOD, 14);
+	gpioPinSet(GPIOD, 14);
 	
 	
 	/*//Init PB10: Tx and PB11: Rx
@@ -28,7 +29,7 @@ int main(void){
 	gpioWriteToPin(GPIOB, SPI_NSS, 1);
 	*/
 	
-	runAllTest();
+	//runAllTest();
 	return 0;
 }
 

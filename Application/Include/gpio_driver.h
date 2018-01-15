@@ -94,13 +94,41 @@ void gpioInit(GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t mode, uint8_t type
  */
 uint8_t gpioReadFromPin(GPIO_TypeDef *gpioX, uint8_t pinNumber);
 
-/** @brief Write a GPIO pin.
+/** @brief Set a GPIO pin.
  *
- *  @param gpioX The address of GPIO port whose pin to be written.
- *  @param pinNumber The pin to be written.
+ *  @param gpioX The address of GPIO port whose pin to be set.
+ *  @param pinNumber The pin to be set.
  *
  *  @return void.
  */
-void gpioWriteToPin(GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t value);
+void gpioPinSet(GPIO_TypeDef *gpioX, uint8_t pinNumber);
+
+/** @brief Reset a GPIO pin.
+ *
+ *  @param gpioX The address of GPIO port whose pin to be reset.
+ *  @param pinNumber The pin to be reset.
+ *
+ *  @return void.
+ */
+void gpioPinReset(GPIO_TypeDef *gpioX, uint8_t pinNumber);
+
+/** @brief Write to a GPIO port.
+ *
+ *  @param gpioX The address of GPIO port to be written.
+ *  @param value The value to be written.
+ *
+ *  @return void.
+ */
+void gpioWriteToPort(GPIO_TypeDef *gpioX, uint32_t value);
+
+
+/** @brief Lock config registers of a GPIO pin.
+ *
+ *  @param gpioX The address of GPIO port whose config register to be lock.
+ *  @param pinNumber The pin to be written.
+ *
+ *  @return uint32_t.
+ */
+uint32_t gpioPinConfigLock(GPIO_TypeDef *gpioX, uint8_t pinNumber);
 
 #endif /* GPIO_DRIVER_H_ */

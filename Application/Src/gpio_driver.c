@@ -55,10 +55,31 @@ uint8_t gpioReadFromPin(GPIO_TypeDef *gpioX, uint8_t pinNumber){
 	return value;
 }
 
-void gpioWriteToPin(GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t value){
-	if(value){
-		gpioX->ODR |= 1 << pinNumber;
-	} else {
-		gpioX->ODR &= ~(1 << pinNumber);
-	}
+void gpioPinSet(GPIO_TypeDef *gpioX, uint8_t pinNumber){
+	 gpioX->BSRR |= 1 << pinNumber;
+}
+
+void gpioPinReset(GPIO_TypeDef *gpioX, uint8_t pinNumber){
+	 gpioX->BSRR |= 1 << (pinNumber + 16);
+}
+
+void gpioWriteToPort(GPIO_TypeDef *gpioX, uint32_t value){
+	gpioX->ODR &= ~0x00001111;
+	gpioX->ODR |= value;
+}
+
+uint32_t gpioPinConfigLock(GPIO_TypeDef *gpioX, uint8_t pinNumber){
+	volatile uint32_t tmp = 0x00010000;
+	tmp |= 1 << pinNumber;
+	/* Set LCKK bit */
+	gpioX->LCKR = tmp;
+	/* Reset LCKK bit */
+	gpioX->LCKR = (1 << pinNumber);
+	/* Set LCKK bit */
+	gpioX->LCKR = tmp;
+	/* Read LCKK bit*/
+	tmp = gpioX->LCKR;
+  /* Read LCKK bit*/
+  tmp = gpioX->LCKR;
+	return tmp;
 }

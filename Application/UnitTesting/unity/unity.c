@@ -1328,7 +1328,7 @@ void UnityIgnore(const char* msg, const UNITY_LINE_TYPE line)
 
 /*-----------------------------------------------*/
 void UnityDefaultTestRun(UnityTestFunction Func, const char* FuncName, const int FuncLineNum)
-{
+{		
     Unity.CurrentTestName = FuncName;
     Unity.CurrentTestLineNumber = (UNITY_LINE_TYPE)FuncLineNum;
     Unity.NumberOfTests++;
@@ -1345,6 +1345,26 @@ void UnityDefaultTestRun(UnityTestFunction Func, const char* FuncName, const int
     UnityConcludeTest();
 }
 
+/*-----------------------------------------------*/
+/* Duat defined function to run the test with ONE ADDRESS ARGUMENT */
+void UnityTestRunWithAddressArgument(UnityTestFunctionWithAddress Func, const char* FuncName, uint32_t* address, const int FuncLineNum)
+{		
+    Unity.CurrentTestName = FuncName;
+    Unity.CurrentTestLineNumber = (UNITY_LINE_TYPE)FuncLineNum;
+    Unity.NumberOfTests++;
+    UNITY_CLR_DETAILS();
+    if (TEST_PROTECT())
+    {
+        setUp();
+        Func(address);
+    }
+    if (TEST_PROTECT())
+    {
+        tearDown();
+    }
+    UnityConcludeTest();
+}
+/* End of Duat defined function*/
 /*-----------------------------------------------*/
 void UnityBegin(const char* filename)
 {

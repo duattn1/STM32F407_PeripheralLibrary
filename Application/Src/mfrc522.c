@@ -28,7 +28,7 @@ uint8_t PCD_ReadRegister(PCD_Register reg){
 	uint8_t value;
 	
 	/* Select slave */
-	gpioWriteToPin(GPIOB, _selectPin, 0);
+	gpioPinReset(GPIOB, _selectPin);
 
 	/* Send the reg over SPI */
 	spiSend(SPI2, 0x80 | reg);					// MSB == 1 is for reading. LSB is not used in address. Datasheet section 8.1.2.3.
@@ -36,7 +36,7 @@ uint8_t PCD_ReadRegister(PCD_Register reg){
 	//value = SPI.transfer(0);		
 	
 	/* Deselect slave */
-	gpioWriteToPin(GPIOB, _selectPin, 1);
+	gpioPinSet(GPIOB, _selectPin);
 	return value;
 }
 
@@ -75,14 +75,14 @@ void PCD_ReadRegisterValues(PCD_Register reg, uint8_t count, uint8_t *values, ui
 
 void PCD_WriteRegister(PCD_Register reg, uint8_t value){
 	/* Select slave */
-	gpioWriteToPin(GPIOB, _selectPin, 0);	
+	gpioPinReset(GPIOB, _selectPin);	
 
 	/* Send the reg over SPI */
 	
 	/* Send the value over SPI */
 	
 	/* Deselect slave */
-	gpioWriteToPin(GPIOB, _selectPin, 1);
+	gpioPinSet(GPIOB, _selectPin);
 	/////* Stop SPI */
 }
 

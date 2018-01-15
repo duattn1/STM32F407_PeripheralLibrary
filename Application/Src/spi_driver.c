@@ -16,7 +16,7 @@ void spiInit(SPI_TypeDef *spiX, uint32_t mode, uint32_t baudrate, uint32_t direc
 	else if(spiX == SPI3)	_SPI3_CLK_ENABLE();
 	
 	//Slave deselect
-	gpioWriteToPin(GPIOB, SPI_NSS, 1);
+	gpioPinSet(GPIOB, SPI_NSS);
 	
 	/* Configure mode: master/slave */
 	spiX->CR1 |= mode;	

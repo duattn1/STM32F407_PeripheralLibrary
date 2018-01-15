@@ -319,6 +319,7 @@ extern void UNITY_OMIT_OUTPUT_FLUSH_HEADER_DECLARATION;
  *-------------------------------------------------------*/
 
 typedef void (*UnityTestFunction)(void);
+typedef void (*UnityTestFunctionWithAddress)(uint32_t*);			/* Duat defined typedef to run the test with ONE ADDRESS ARGUMENT */
 
 #define UNITY_DISPLAY_RANGE_INT  (0x10)
 #define UNITY_DISPLAY_RANGE_UINT (0x20)
@@ -606,6 +607,20 @@ extern const char UnityStrErr64[];
 #endif
 #endif
 #endif
+
+/* Duat's defined macro to run the test with ONE ADDRESS ARGUMENT */
+#ifndef RUN_TEST_ON_PORTX
+#ifdef __STDC_VERSION__
+#if __STDC_VERSION__ >= 199901L
+#define RUN_TEST_ON_PORTX(...) UnityTestRunWithAddressArgument(RUN_TEST_FIRST(__VA_ARGS__), RUN_TEST_SECOND(__VA_ARGS__))
+#define RUN_TEST_FIRST(...) RUN_TEST_FIRST_HELPER(__VA_ARGS__, throwaway)
+#define RUN_TEST_FIRST_HELPER(first, ...) (first), #first
+#define RUN_TEST_SECOND(...) RUN_TEST_SECOND_HELPER(__VA_ARGS__, __LINE__, throwaway)
+#define RUN_TEST_SECOND_HELPER(first, second, ...) (second)
+#endif
+#endif
+#endif
+/* End of Duat defined macros*/
 
 /* If we can't do the tricky version, we'll just have to require them to always include the line number */
 #ifndef RUN_TEST

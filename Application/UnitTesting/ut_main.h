@@ -5,6 +5,4 @@
 #include "ut_gpio_driver.h"
 
 
-
-
 #endif /* UT_MAIN_H */

@@ -5,50 +5,43 @@
 #include "utilities/ut_utilities.h"
 #include "../Include/gpio_driver.h"
 
-extern void (*f[])(GPIO_TypeDef *gpioX);
+//void x(GPIO_TypeDef *gpioX);
+
+extern void (*f[])(GPIO_TypeDef*);
 extern uint8_t numberOfTestcase;
 
 typedef enum{
-	PIN_0_CONFIG_BY_1BIT_MASK 		= 0x00000001,
-	PIN_1_CONFIG_BY_1BIT_MASK 		= 0x00000002,
-	PIN_2_CONFIG_BY_1BIT_MASK 		= 0x00000004,
-	PIN_3_CONFIG_BY_1BIT_MASK 		= 0x00000008,
-	PIN_4_CONFIG_BY_1BIT_MASK 		= 0x00000010,
-	PIN_5_CONFIG_BY_1BIT_MASK 		= 0x00000020,
-	PIN_6_CONFIG_BY_1BIT_MASK 		= 0x00000040,
-	PIN_7_CONFIG_BY_1BIT_MASK 		= 0x00000080,
-	PIN_8_CONFIG_BY_1BIT_MASK 		= 0x00000100,
-	PIN_9_CONFIG_BY_1BIT_MASK 		= 0x00000200,
-	PIN_10_CONFIG_BY_1BIT_MASK 		= 0x00000400,
-	PIN_11_CONFIG_BY_1BIT_MASK 		= 0x00000800,
-	PIN_12_CONFIG_BY_1BIT_MASK 		= 0x00001000,
-	PIN_13_CONFIG_BY_1BIT_MASK 		= 0x00002000,
-	PIN_14_CONFIG_BY_1BIT_MASK 		= 0x00004000,
-	PIN_15_CONFIG_BY_1BIT_MASK 		= 0x00008000,
-	
-	PIN_0_CONFIG_BY_2BIT_MASK 		= 0x00000003,
-	PIN_1_CONFIG_BY_2BIT_MASK 		= 0x0000000C,
-	PIN_2_CONFIG_BY_2BIT_MASK 		= 0x00000030,
-	PIN_3_CONFIG_BY_2BIT_MASK 		= 0x000000C0,
-	PIN_4_CONFIG_BY_2BIT_MASK 		= 0x00000300,
-	PIN_5_CONFIG_BY_2BIT_MASK 		= 0x00000C00,
-	PIN_6_CONFIG_BY_2BIT_MASK 		= 0x00003000,
-	PIN_7_CONFIG_BY_2BIT_MASK 		= 0x0000C000,
-	PIN_8_CONFIG_BY_2BIT_MASK 		= 0x00030000,
-	PIN_9_CONFIG_BY_2BIT_MASK 		= 0x000C0000,
-	PIN_10_CONFIG_BY_2BIT_MASK 		= 0x00300000,
-	PIN_11_CONFIG_BY_2BIT_MASK 		= 0x00C00000,
-	PIN_12_CONFIG_BY_2BIT_MASK 		= 0x03000000,
-	PIN_13_CONFIG_BY_2BIT_MASK 		= 0x0C000000,
-	PIN_14_CONFIG_BY_2BIT_MASK 		= 0x30000000,
-	PIN_15_CONFIG_BY_2BIT_MASK 		= 0xC0000000,
+	PIN_x_CONFIG_BY_1BIT_MASK 		= 0x00000001, //0x01	
+	PIN_x_CONFIG_BY_2BIT_MASK 		= 0x00000003, //0x03
+	PIN_x_CONFIG_BY_4BIT_MASK			= 0x0000000F	//0x0F
 } Mask;
 
+void ut_gpioInitNoAF_0(GPIO_TypeDef *gpioX);
 void ut_gpioInitNoAF_1(GPIO_TypeDef *gpioX);
 void ut_gpioInitNoAF_2(GPIO_TypeDef *gpioX);
 void ut_gpioInitNoAF_3(GPIO_TypeDef *gpioX);
-void ut_gpioInitNoAF_4(GPIO_TypeDef *gpioX);
+/*
+16 AF TCs
 
-void tc_gpioInit_noAF(GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t mode, uint8_t type, uint8_t speedType, uint8_t pullType, uint8_t altFunction);
-void test(void);
+*/
+void ut_gpioInitAF_0(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_1(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_2(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_3(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_4(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_5(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_6(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_7(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_8(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_9(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_10(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_11(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_12(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_13(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_14(GPIO_TypeDef *gpioX);
+void ut_gpioInitAF_15(GPIO_TypeDef *gpioX);
+	
+void tc_gpioInit(GPIO_TypeDef *gpioX, uint8_t pinNumber, uint8_t mode, uint8_t type, uint8_t speedType, uint8_t pullType, uint8_t altFunction);
+void test(int x);
+
 #endif /* UT_GPIO_DRIVER_H_ */
