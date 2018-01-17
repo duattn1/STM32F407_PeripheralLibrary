@@ -48,6 +48,21 @@
 #define _UART5_CLK_ENABLE()					(RCC->APB1ENR |= RCC_APB1ENR_UART5EN)
 #define _USART6_CLK_ENABLE() 				(RCC->APB2ENR |= RCC_APB2ENR_USART6EN)
 
+typedef struct {
+	USART_TypeDef *uartX;
+	uint8_t txPin;
+	uint8_t rxPin;
+	uint8_t clkPin;
+} usartPinPack;
+
+static usartPinPack usart1PortA = {USART1, 9, 10, 8};
+static usartPinPack usart1PortB = {USART1, 6, 7, -1};
+static usartPinPack usart2PortA = {USART2, 2, 3, 4};
+static usartPinPack usart3PortB = {USART3, 10, 11, 12};
+static usartPinPack uart4PortA = {UART4, 0, 1, -1};
+static usartPinPack usart6PortC = {USART6, 6, 7, 8};
+/*so on*/
+
 
 /** @brief Configure a UART.
  *

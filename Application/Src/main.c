@@ -15,9 +15,10 @@ int main(void){
 	//gpioPinConfigLock(GPIOD, 14);
 	//gpioPinSet(GPIOD, 14);
 	
-		//Init PB10: Tx and PB11: Rx
-	gpioInit(GPIOB, PORTB_USART3_TX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
-	gpioInit(GPIOB, PORTB_USART3_RX, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);		
+	/*
+	//Init PB10: Tx and PB11: Rx
+	gpioInit(GPIOB, usart3PortB.txPin, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);
+	gpioInit(GPIOB, usart3PortB.rxPin, ALTFUNCTION, PUSHPULL, VERYHIGHSPEED, NOPULL, AF7);		
 	
 	uartInit(USART3, IS_8_BITS_DATA, IS_1_STOP_BIT, DISABLE_PARITY, OVER_BY_16, 9600);		
 	nvicSetup();
@@ -28,7 +29,7 @@ int main(void){
 	while(1){
 		
 	}
-	
+	*/
 	
 	
 	/*spiInit(SPI2, SPI_MASTER, SPI_CLOCK_DIV_2, SPI_UNIDIRECTION, SPI_FIRST_CLOCK, SPI_CK_TO_0, SPI_8BITS_DATA, SPI_MSB_FIRST);
@@ -38,7 +39,7 @@ int main(void){
 	gpioWriteToPin(GPIOB, SPI_NSS, 1);
 	*/
 	
-	//runAllTest();
+	runAllTest();
 	return 0;
 }
 

@@ -1,6 +1,10 @@
 #include "ut_gpio_driver.h"
 
 void (*f[])(GPIO_TypeDef*) = {
+	ut_gpioInitNoAF_0,
+	ut_gpioInitNoAF_1,
+	ut_gpioInitNoAF_2,
+	ut_gpioInitNoAF_3,
 	ut_gpioInitAF_1,
 	ut_gpioInitAF_2,
 	ut_gpioInitAF_3,
