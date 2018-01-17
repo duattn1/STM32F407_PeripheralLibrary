@@ -59,7 +59,7 @@ void uartInit(USART_TypeDef *uartX, uint8_t wordLength, uint8_t stopBitNumber, u
 }
 
 void sendChar(USART_TypeDef *uartX, uint8_t character){
-    while(!(uartX->SR & USART_FLAG_TXE)); //Bit USART_FLAG_TXE is set when data is transfer to shift register
+    while(!(uartX->SR & USART_FLAG_TXE)); //Make sure that there is no data in the Transmit Data Register before write to DR
     uartX->DR = character;
 }
 
@@ -71,7 +71,7 @@ void sendString(USART_TypeDef *uartX, char text[], int length){
 }
 
 uint8_t getChar(USART_TypeDef *uartX){
-    while(!(uartX->SR & USART_FLAG_TXE));
+    while(!(uartX->SR & USART_FLAG_RXNE));
     return (uint8_t)uartX->DR;
 }
 

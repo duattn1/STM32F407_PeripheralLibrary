@@ -404,6 +404,11 @@
               <FileType>1</FileType>
               <FilePath>.\Src\spi_driver.c</FilePath>
             </File>
+            <File>
+              <FileName>interrupt_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\interrupt_controller.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

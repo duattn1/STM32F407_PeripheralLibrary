@@ -18,7 +18,9 @@
 #define APB1_CLK_SPEED 						16000000  //duat: recheck the speed
 #define APB2_CLK_SPEED 						32000000	//duat: recheck the speed
 
-#define USART_FLAG_TXE 0x80
+#define USART_FLAG_RXNE 					(0x01 << 5)
+#define USART_FLAG_TC 						(0x01 << 6)
+#define USART_FLAG_TXE 						(0x01 << 7)
 
 /* UART word length */
 #define IS_8_BITS_DATA						0x00
@@ -45,6 +47,7 @@
 #define _UART4_CLK_ENABLE()					(RCC->APB1ENR |= RCC_APB1ENR_UART4EN)
 #define _UART5_CLK_ENABLE()					(RCC->APB1ENR |= RCC_APB1ENR_UART5EN)
 #define _USART6_CLK_ENABLE() 				(RCC->APB2ENR |= RCC_APB2ENR_USART6EN)
+
 
 /** @brief Configure a UART.
  *
