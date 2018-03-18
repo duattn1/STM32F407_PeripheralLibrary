@@ -13,7 +13,7 @@
 #define UART_DRIVER_H_
 
 #include <stdint.h>
-#include "stm32f4xx.h"
+#include "stm32f407xx.h"
 
 #define APB1_CLK_SPEED 						16000000  //duat: recheck the speed
 #define APB2_CLK_SPEED 						32000000	//duat: recheck the speed

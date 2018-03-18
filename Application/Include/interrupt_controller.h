@@ -1,9 +1,10 @@
 #ifndef INTERRUPT_CONTROLLER_H_
 #define INTERRUPT_CONTROLLER_H_
 
-#include "stm32f4xx.h"
+#include "stm32f407xx.h"
 #include <stdint.h>
 #include "../Include/uart_driver.h"
+#include "../Include/spi_driver.h"
 
 #define EXTI_FALLING_TRIGGER_DISABLE 		0x00
 #define EXTI_FALLING_TRIGGER_ENABLE 		0x01
@@ -11,6 +12,9 @@
 #define USARTX_RXNE_INTERRUPT_ENABLE		(0x01 << 5)
 #define USARTX_TC_INTERRUPT_ENABLE			(0x01 << 6)
 #define USARTX_TXE_INTERRUPT_ENABLE			(0x01 << 7)
+
+#define SPIX_RXNE_INTERRUPT_ENABLE			(0x01 << 6)
+#define SPIX_TXE_INTERRUPT_ENABLE				(0x01 << 7)
 
 static volatile uint8_t receivedChar;
 
@@ -60,7 +64,9 @@ void nvicSetup(void);
 
 void gpioInterruptConfig(void);
 void usartInterruptConfig(void);
+void spiInterruptConfig(void);
 void usartXConfig(USART_TypeDef *uartX);
+void spiXConfig(SPI_TypeDef *spiX);
 
 void extiConfig(uint8_t extiLine, uint8_t fallingTriggerEnable);
 void extiSourceSelect(uint8_t extiLine, uint8_t extiSource);

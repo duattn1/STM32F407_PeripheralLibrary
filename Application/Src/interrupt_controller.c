@@ -3,16 +3,16 @@
 
 void nvicSetup(void){	
 	//gpioInterruptConfig();
-	usartInterruptConfig();
-	
+	//usartInterruptConfig();
+	spiInterruptConfig();
 	
 	/* Set priority for interrupts */	
 	//NVIC_SetPriority(EXTI0_IRQn, 0);
-	NVIC_SetPriority(USART3_IRQn, 0);
-	
+	//NVIC_SetPriority(USART3_IRQn, 0);
+	NVIC_SetPriority(SPI2_IRQn, 0);
 	
 	/* Enable interrupts*/
-	NVIC_EnableIRQ(USART3_IRQn);
+	NVIC_EnableIRQ(SPI2_IRQn);
 }
 
 void gpioInterruptConfig(void){
@@ -24,10 +24,20 @@ void usartInterruptConfig(void){
 	usartXConfig(USART3);
 }	
 
+void spiInterruptConfig(void){
+	spiXConfig(SPI2);
+}
+
 void usartXConfig(USART_TypeDef *uartX){
 	
 	/* Enable TXNE interrupt */
 	uartX->CR1 |= USARTX_RXNE_INTERRUPT_ENABLE;
+}
+
+void spiXConfig(SPI_TypeDef *spiX){
+	
+	/*Enable RXNE interrupt*/
+	spiX->CR2 |= SPIX_RXNE_INTERRUPT_ENABLE;
 }
 
 void EXTI0_IRQHandler(void){
@@ -43,9 +53,18 @@ void USART3_IRQHandler(void){
 	receivedChar = (uint8_t)USART3->DR;
 	
 	if(receivedChar){
-		sendString(USART3, "received: ", 10);
+		//sendString(USART3, "received: ", 10);
 		sendChar(USART3, receivedChar);
 	}
+
+		ITM_SendChar(receivedChar);
+	
+}
+
+void SPI2_IRQHandler(void){
+	while(!(SPI2->SR & SPI_I2S_FLAG_RXNE));
+	receivedChar = (uint8_t)SPI2->DR;
+	ITM_SendChar(receivedChar);
 }
 
 void extiConfig(uint8_t extiLine, uint8_t fallingTriggerEnable){

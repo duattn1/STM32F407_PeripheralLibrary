@@ -13,7 +13,7 @@
 #define GPIO_DRIVER_H_
 
 #include <stdint.h>
-#include "stm32f4xx.h"
+#include "stm32f407xx.h"
 
 #define NOAF 					0
 

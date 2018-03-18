@@ -3,7 +3,7 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'DIY_Smart_Home' 
+ * Project: 'STM32F407_PeripheralLibrary' 
  * Target:  'Target 1' 
  */
 

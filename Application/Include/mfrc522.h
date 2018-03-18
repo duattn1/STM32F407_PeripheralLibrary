@@ -2,7 +2,7 @@
 #define MFRC522_H_
 
 #include <stdint.h>
-#include "stm32f4xx.h"
+#include "stm32f407xx.h"
 #include "spi_driver.h"
 #include "gpio_driver.h"
 

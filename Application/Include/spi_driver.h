@@ -2,7 +2,7 @@
 #define SPI_DRIVER_H_
 
 #include <stdint.h>
-#include "stm32f4xx.h"
+#include "stm32f407xx.h"
 
 #define SPI_I2S_FLAG_TXE				(0x01 << 1)
 #define SPI_I2S_FLAG_RXNE				(0x01 << 0)
@@ -28,8 +28,8 @@
 #define SPI_CLOCK_DIV_256 			(0x07 << 3)
 
 /* SPI direction*/
-#define SPI_UNIDIRECTION 				(0x00 << 14)
-#define SPI_BIDIRECTION					(0x01 << 14)
+#define SPI_2_LINE_UNIDIRECTION 				(0x00 << 14)
+#define SPI_1_LINE_BIDIRECTION					(0x01 << 14)
 
 /* SPI clock phase */
 #define SPI_FIRST_CLOCK 				(0x00 << 0)

@@ -48,10 +48,10 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>DIY_Smart_Home</OutputName>
+          <OutputName>STM32F407_PeripheralLibrary</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>1</CreateHexFile>
+          <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
@@ -377,6 +377,46 @@
       </TargetOption>
       <Groups>
         <Group>
+          <GroupName>Include</GroupName>
+          <Files>
+            <File>
+              <FileName>gpio_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\gpio_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt_controller.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\interrupt_controller.h</FilePath>
+            </File>
+            <File>
+              <FileName>mfrc522.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\mfrc522.h</FilePath>
+            </File>
+            <File>
+              <FileName>spi_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\spi_driver.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\stm32f4xx.h</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f407xx.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\stm32f407xx.h</FilePath>
+            </File>
+            <File>
+              <FileName>uart_driver.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Include\uart_driver.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Src</GroupName>
           <Files>
             <File>
@@ -385,14 +425,14 @@
               <FilePath>.\Src\gpio_driver.c</FilePath>
             </File>
             <File>
+              <FileName>interrupt_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\interrupt_controller.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>uart_driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Src\uart_driver.c</FilePath>
             </File>
             <File>
               <FileName>mfrc522.c</FileName>
@@ -405,34 +445,9 @@
               <FilePath>.\Src\spi_driver.c</FilePath>
             </File>
             <File>
-              <FileName>interrupt_controller.c</FileName>
+              <FileName>uart_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Src\interrupt_controller.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Include</GroupName>
-          <Files>
-            <File>
-              <FileName>gpio_driver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Include\gpio_driver.h</FilePath>
-            </File>
-            <File>
-              <FileName>uart_driver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Include\uart_driver.h</FilePath>
-            </File>
-            <File>
-              <FileName>mfrc522.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Include\mfrc522.h</FilePath>
-            </File>
-            <File>
-              <FileName>spi_driver.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Include\spi_driver.h</FilePath>
+              <FilePath>.\Src\uart_driver.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -445,9 +460,9 @@
               <FilePath>.\UnitTesting\ut_gpio_driver.c</FilePath>
             </File>
             <File>
-              <FileName>unity.c</FileName>
+              <FileName>ut_main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\UnitTesting\unity\unity.c</FilePath>
+              <FilePath>.\UnitTesting\ut_main.c</FilePath>
             </File>
             <File>
               <FileName>ut_utilities.c</FileName>
@@ -455,9 +470,9 @@
               <FilePath>.\UnitTesting\utilities\ut_utilities.c</FilePath>
             </File>
             <File>
-              <FileName>ut_main.c</FileName>
+              <FileName>unity.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\UnitTesting\ut_main.c</FilePath>
+              <FilePath>.\UnitTesting\unity\unity.c</FilePath>
             </File>
           </Files>
         </Group>
