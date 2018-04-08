@@ -12,7 +12,8 @@ void programFlash(void);
 
 /*checksum = sum[all hex, exclude the checksum itself] % 256 (dec), then got the Two's complement of the result */
 char hexBinary[] = 
-":1000000068060020290200083102000833020008B7\
+":020000040800F2\
+:1000000068060020290200083102000833020008B7\
 :10001000350200083702000839020008000000001D\
 :100020000000000000000000000000003B0200088B\
 :100030003D020008000000003F02000855040008CF\
@@ -153,6 +154,7 @@ void printCMDMenu(void){
 
 void programFlash(void){
 	int readIndex = 0;    
+    uint16_t baseAddress = 0;
     
 	while(readIndex < sizeof(hexBinary)){
 		while(hexBinary[readIndex] != ':' && readIndex < sizeof(hexBinary)){
@@ -160,12 +162,16 @@ void programFlash(void){
   		}
   		printf("----------\n");
   		if(hexBinary[readIndex] == ':'){
-  			hexRecord xx;
-  			int j = 0;
+  			hexRecord xx;  			
   			xx = readHexRecord(hexBinary, readIndex);
+  			if(xx.type == 4){
+  				baseAddress |= xx.data[0] << 8;	
+				baseAddress |= xx.data[1] ;		
+			} else if (xx.type == 0){
+				printf("------address: %08x-------\n", xx.address + 0x08000000);
+  				writeMemory(xx);
+			} /* Not process the other type of record yet*/
   			
-  			printf("------address: %08x-------\n", xx.address + 0x08000000);
-  			writeMemory(xx);
   			/*
   			printf(":%02x ", xx.length);
 			printf("%04x ", xx.address);

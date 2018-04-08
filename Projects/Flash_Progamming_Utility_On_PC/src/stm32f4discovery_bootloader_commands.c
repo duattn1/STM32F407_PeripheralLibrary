@@ -22,14 +22,7 @@ uint8_t startBootloader(void){
 	
 	sendString(cmd, sizeof(cmd));	
 	ack = receiveByte();
-	/* Try to send 1 more time the CMD, the bootloader may understand this byte as checksum 
-	/ and may send the NACK.
-	*/
-	if(ack != ACK && ack != NACK){
-		sendString(cmd, sizeof(cmd));
-		ack = receiveByte();		
-	}
-	
+		
 	if(ack == ACK){
 		printf("Bootloader is waiting for commands.\n");
 		printf("--------------------\n");
@@ -163,7 +156,7 @@ void eraseMemory(uint8_t numberOfPage){
 		/  1 page = 128 bytes
 		*/
 		
-		/* erase 16 pages*/
+		/* erase 1 pages*/
 		sendByte(0x00);
 		checksum ^= 0x00;
 		sendByte(0x00);
