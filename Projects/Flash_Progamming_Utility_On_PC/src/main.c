@@ -168,7 +168,7 @@ void programFlash(void){
   				baseAddress |= xx.data[0] << 8;	
 				baseAddress |= xx.data[1] ;		
 			} else if (xx.type == 0){
-				printf("------address: %08x-------\n", xx.address + 0x08000000);
+				printf("------address: %08x-------\n", xx.address + baseAddress);
   				writeMemory(xx);
 			} /* Not process the other type of record yet*/
   			
