@@ -72,7 +72,8 @@ void programHexImage(uint8_t hexImageContent[],  uint32_t lengthOfReceivedString
   			xx = readHexRecord(hexImageContent, readIndex);
   			if(xx.type == 4){
 					baseAddress |= xx.data[0] << 24;	
-					baseAddress |= xx.data[1] << 16;							
+					baseAddress |= xx.data[1] << 16;	
+						//baseAddress = 0x0800C000;
 				}	else if (xx.type == 0){	
 				printf("Write at address: %08x\r\n", baseAddress + xx.offset);
 				FLASHWrite(baseAddress + xx.offset, baseAddress + xx.offset + xx.length, xx.data);	

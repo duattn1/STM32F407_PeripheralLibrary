@@ -5,7 +5,7 @@ F (.\Inc\UART_driver.h)(0x5ACB22AC)()
 F (.\Inc\FLASH_driver.h)(0x5ACB32D0)()
 F (.\Inc\STDIO_Redirect.h)(0x5ACA4421)()
 F (.\Inc\hex_file_processing.h)(0x5ACB8BBC)()
-F (.\Src\main.c)(0x5ACB8CEB)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Src\main.c)(0x5ACC09EF)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x572C13BE)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x572C13BE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735A3AE)
@@ -31,7 +31,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x5735
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x57353CB6)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57353CB6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x572C13C0)
-F (.\Src\interrupt_controller.c)(0x5ACB7C78)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\interrupt_controller.o --omf_browse .\objects\interrupt_controller.crf --depend .\objects\interrupt_controller.d)
+F (.\Src\interrupt_controller.c)(0x5ACB9345)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\interrupt_controller.o --omf_browse .\objects\interrupt_controller.crf --depend .\objects\interrupt_controller.d)
 I (.\Inc\interrupt_controller.h)(0x5ACB2317)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x572C13BE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735A3AE)
@@ -53,7 +53,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\cmsis_armcc.h)(0x5735
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x57353CB6)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57353CB6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x572C13C0)
-F (.\Src\FLASH_driver.c)(0x5ACB32D0)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\flash_driver.o --omf_browse .\objects\flash_driver.crf --depend .\objects\flash_driver.d)
+F (.\Src\FLASH_driver.c)(0x5ACC09D9)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\flash_driver.o --omf_browse .\objects\flash_driver.crf --depend .\objects\flash_driver.d)
 I (.\Inc\FLASH_driver.h)(0x5ACB32D0)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x572C13BE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cm4.h)(0x5735A3AE)
@@ -77,7 +77,7 @@ I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmfunc.h)(0x5735
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include\core_cmsimd.h)(0x57353CB6)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x572C13C0)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E4C36)
-F (.\Src\hex_file_processing.c)(0x5ACB8CEB)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\hex_file_processing.o --omf_browse .\objects\hex_file_processing.crf --depend .\objects\hex_file_processing.d)
+F (.\Src\hex_file_processing.c)(0x5ACB95FB)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\Inc-IE:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.9.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx --C99-o .\objects\hex_file_processing.o --omf_browse .\objects\hex_file_processing.crf --depend .\objects\hex_file_processing.d)
 I (.\Inc\hex_file_processing.h)(0x5ACB8BBC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E4C36)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E4C36)

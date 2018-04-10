@@ -1,7 +1,7 @@
 #include "interrupt_controller.h"
 	
 uint8_t isStringReceived;
-uint8_t receivedString[2048];	//temporary place to store the hex image received from UART
+uint8_t receivedString[5120];	//temporary place to store the hex image received from UART
 uint32_t lengthOfReceivedString;
 uint8_t *ptr = receivedString;
 

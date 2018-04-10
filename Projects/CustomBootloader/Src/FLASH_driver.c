@@ -78,11 +78,14 @@ void FLASHWrite(uint32_t startAddress, uint32_t endAddress, uint8_t buffer[]){
 		/* Write the data */
 		while (currentAddress < endAddress)
 		{
+			/* Note that the 1st byte will be written to LSB bit of Flash
+			/ The 4th bytes will be written to MSB bit of Flash
+			*/
 			uint32_t dataToWrite = 0;
-			dataToWrite |= buffer[byteIndex] << 24;
-			dataToWrite |= buffer[byteIndex + 1] << 16;
-			dataToWrite |= buffer[byteIndex + 2] << 8;
-			dataToWrite |= buffer[byteIndex + 3] << 0;
+			dataToWrite |= buffer[byteIndex] << 0;
+			dataToWrite |= buffer[byteIndex + 1] << 8;
+			dataToWrite |= buffer[byteIndex + 2] << 16;
+			dataToWrite |= buffer[byteIndex + 3] << 24;
 			
 			*(__IO uint32_t*)currentAddress = dataToWrite;
 			
