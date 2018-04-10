@@ -16,6 +16,7 @@ void FLASHUnlock(void){
 	}  
 }
 
+
 void FLASHRead(uint32_t startAddress, uint32_t endAddress)
 {
 	uint32_t currentAddress = startAddress;

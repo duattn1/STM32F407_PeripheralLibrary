@@ -11,6 +11,10 @@
 #define USARTX_TC_INTERRUPT_ENABLE			(0x01 << 6)
 #define USARTX_TXE_INTERRUPT_ENABLE			(0x01 << 7)
 
+typedef enum{
+	FALSE = 0,
+	TRUE = 1
+} Bool;
 
 static volatile uint8_t receivedChar;
 

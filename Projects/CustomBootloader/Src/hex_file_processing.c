@@ -83,5 +83,5 @@ void programHexImage(uint8_t hexImageContent[],  uint32_t lengthOfReceivedString
 		readIndex++;	
 	}
 	
-	FLASHRead(0x080E0000, 0x080E0000 + 0xFF);	
+	//FLASHRead(0x080E0000, 0x080E0000 + 0xFF);	
 }
