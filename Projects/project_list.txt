@@ -1,0 +1,2 @@
+E:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\CustomBootloader\CustomBootloader\CustomBootloader.uvprojx
+E:\C\GIT\STM32F4Discovey_Bootloader_Projects\Projects\STM32F4Discovery_Bootloader\STM32F4Discovery_Bootloader\Bootloader.uvprojx
