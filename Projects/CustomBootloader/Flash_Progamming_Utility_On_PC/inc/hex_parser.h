@@ -3,6 +3,7 @@
 
 #include <windows.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <stdio.h>
 
 
@@ -23,7 +24,7 @@ uint8_t byteInterpret(uint8_t char1, uint8_t char2);
 
 void testbyteInterpret(void);
 
-void readHexFile(void);
+uint32_t readHexFile(char *hexFile);
 
 hexRecord readHexRecord(uint8_t hex[], uint32_t readIndex);
 

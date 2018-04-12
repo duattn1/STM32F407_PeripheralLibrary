@@ -71,11 +71,11 @@ void FLASHRead(uint32_t startAddress, uint32_t endAddress);
 
 /** @brief Erase FLASH
  *
- *  @param none
+ *  @param sectorNumber The sector that will be erased
  *
  *  @return void
  */
-void FLASHEraseSector(void);
+void FLASHEraseSector(uint8_t sectorNumber);
 
 /** @brief Write to FLASH
  *

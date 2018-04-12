@@ -39,7 +39,7 @@ void FLASHRead(uint32_t startAddress, uint32_t endAddress)
 }
 
 
-void FLASHEraseSector(void){
+void FLASHEraseSector(uint8_t sectorNumber){
 	FLASHUnlock();
 	
 	if(FLASH->SR & FLASH_FLAG_BSY){
@@ -48,8 +48,8 @@ void FLASHEraseSector(void){
 		printf("Start erasing\r\n");
 
 		FLASH->CR |= 1 << 1; // Select setor erase mode
-		FLASH->CR |= 11 << 3; // Choose sector 11 to delete
 		
+		FLASH->CR |= sectorNumber << 3;  //Set the sector to be erased		
 		
 		FLASH->CR |= 1 << 16; // Set the STRT bit in the FLASH_CR register
 		

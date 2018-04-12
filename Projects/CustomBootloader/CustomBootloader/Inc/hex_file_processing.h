@@ -23,7 +23,7 @@ typedef struct {
 	uint8_t checksum;
 } hexRecord;
 
-extern void FLASHEraseSector(void);
+extern void FLASHEraseSector(uint8_t sectorNumber);
 extern void FLASHWrite(uint32_t startAddress, uint32_t endAddress, uint8_t buffer[]);
 extern void FLASHRead(uint32_t startAddress, uint32_t endAddress);
 

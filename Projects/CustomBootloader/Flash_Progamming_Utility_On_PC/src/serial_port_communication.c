@@ -2,8 +2,7 @@
 
 char  ComPortName[] = "\\\\.\\COM4";  /*Name of the Serial port(May Change) to be opened, */
 
-
-void serialPortInit(void){
+bool connectSerialPort(void){
 	/*---------------------------------- Opening the Serial Port -------------------------------------------*/		
 	printf("Connecting with serial port....\n\n");	
 	hComm = CreateFile( ComPortName,                  /* Name of the Port to be Opened*/
@@ -16,11 +15,15 @@ void serialPortInit(void){
 
 	if (hComm == INVALID_HANDLE_VALUE){
 		printf("[Error] Port %s can't be opened\n", ComPortName);
-		return;
+		return false;
 	}	else {
 		printf("Connect succesfully.\n");	
-	}
+	}	
+	return true;
+}
 
+void serialPortInit(void){
+	
 	/*------------------------------- Setting the Parameters for the SerialPort ------------------------------*/			
 	DCB dcbSerialParams = { 0 };                         /* Initializing DCB structure */
 	dcbSerialParams.DCBlength = sizeof(dcbSerialParams);

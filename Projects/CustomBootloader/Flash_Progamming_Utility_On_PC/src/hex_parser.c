@@ -1,5 +1,6 @@
 #include "../inc/hex_parser.h"
 
+uint8_t hexBuffer[10*1024] = {0};
 
 uint8_t byteInterpret(uint8_t char1, uint8_t char2){
 	uint8_t result = 0;
@@ -32,44 +33,31 @@ void testbyteInterpret(void){
 	}    
 }
 
-void readHexFile(void){
-	uint32_t j = 0;
-	uint32_t readIndex = 0;
-	uint8_t buffer[256] = {'\0'};
+uint32_t readHexFile(char *hexFile){
+	uint32_t hexFileLength = 0;
+	uint32_t readIndex = 0;	
 	
 	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);    
     
-    hFile = CreateFile("myfile.txt",    /* open MYFILE.TXT  */
+    hFile = CreateFile(hexFile,    	/* open MYFILE.TXT  */
                 GENERIC_WRITE | GENERIC_READ,              
-                FILE_SHARE_READ,               /* share for reading  */
-                NULL,                          /* no security  */
-                OPEN_EXISTING,                   /* existing file only  */
-                FILE_ATTRIBUTE_NORMAL,         /* normal file  */
-                NULL);                         /* no attr */    
+                FILE_SHARE_READ,               		/* share for reading  */
+                NULL,                         	 	/* no security  */
+                OPEN_EXISTING,                   	/* existing file only  */
+                FILE_ATTRIBUTE_NORMAL,        		/* normal file  */
+                NULL);                        		/* no attr */    
 	
-	status = ReadFile(hFile,buffer,sizeof(buffer),&byteWritten,NULL);    
+	status = ReadFile(hFile,hexBuffer,sizeof(hexBuffer),&byteWritten,NULL);    
+	hexFileLength = byteWritten;
     if(status)
     {
-     	/*WriteFile(hStdOut,buffer,sizeof(buffer),NULL,NULL);*/
-     	while (*(buffer + j) != '\0'){
-   			printf("%c", *(buffer + j));
-   			j++;
-   		}    	
-		   /*	
-   		while(readIndex < sizeof(buffer)){
-			while(buffer[readIndex] != ':' && readIndex < sizeof(buffer)){
-   				readIndex++;
-  			}
-  			if(buffer[readIndex] == ':'){
-  				readHexRecord(buffer, readIndex);
-			}	
-			readIndex++;	
-		} 	*/	  	
+     	/*WriteFile(hStdOut,buffer,sizeof(buffer),NULL,NULL);*/     	  
+			
     } else {
-    	printf("[Error] Reading file failed\n");
-    	
+    	printf("[Error] Reading file failed\n\n");    
+    	return 0; /* length of 0 to indicate read failed */
 	}
-
+	return hexFileLength;
 }
 
 hexRecord readHexRecord(uint8_t hex[], uint32_t readIndex){
@@ -95,15 +83,6 @@ hexRecord readHexRecord(uint8_t hex[], uint32_t readIndex){
 	}
 	
 	record.checksum = byteInterpret(hex[readIndex + 9 + 2*record.length], hex[readIndex + 10 + 2*record.length]);   
-    /*
-	printf(":%0.2x", record.length);
-	printf("%0.4x", record.address);
-	printf("%0.2x", record.type);   
-	for(j = 0; j < record.length ;j++){
-		printf("%0.2x", record.data[j]);
-	}   
-	printf("%0.2x\n", record.checksum);
-	*/
-	
+
 	return record;
 }

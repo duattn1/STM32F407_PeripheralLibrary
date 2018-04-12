@@ -40,7 +40,6 @@ void receivedDataFromHex(void);
 
 int main(void){	
 	initBootloader();	
-//	uint8_t selectedCmd;	
 	
 	if(checkApplicationUpdate() == false){
 		jumpToApplication();
@@ -48,6 +47,7 @@ int main(void){
 	/* Trigger the host to send the image data */
 	printf("%c", BINARY_REQUEST);
 	
+
 	/* Do application update in the while loop*/
 	while(1){
 		/* Get the image first */
@@ -55,6 +55,7 @@ int main(void){
 			receivedDataFromHex();
 		} else {
 			programBinaryImage(binaryBaseAddress, binaryImageLength, binaryImage);
+			
 			jumpToApplication();
 		}		
 	}
