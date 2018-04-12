@@ -15,24 +15,31 @@
 #include "UART_driver.h"
 #include "FLASH_driver.h"
 #include "hex_file_processing.h"
+#include "interrupt_controller.h"
 
 #define APPLICATION_ADDRESS        0x08010000
+#define USER_BUTTON			0 //A0
+
 
 #define ACK							0x79
 #define NACK						0x1F
 #define BINARY_REQUEST	0x01
 
 
-uint8_t binaryImage[0x05D0]; //10 KB
+uint8_t binaryImage[10*1024]; //10 KB
 uint8_t *binaryImagePtr = binaryImage;
 uint32_t binaryImageLength = 0;
 uint32_t binaryBaseAddress = 0;
 bool endOfHexFile = false;
+volatile uint32_t ticks;
+extern bool isButtonPressed;
 
 USART_TypeDef *UARTPortToRedirect = USART3;
 
 typedef void (*pFunction)(void);
 
+void delay(volatile uint32_t time);
+void SysTick_Handler(void);
 void initBootloader(void);
 bool checkApplicationUpdate(void);
 void jumpToApplication(void);
@@ -63,22 +70,41 @@ int main(void){
 
 	
 void initBootloader(void){
+	/*------------------- Init the User button -------------------*/
+	GPIOInit(GPIOA, USER_BUTTON, GPIO_MODER_INPUT, GPIO_OTYPER_PUSHPULL, GPIO_OSPEEDR_HIGH_SPEED, GPIO_PUPDR_NOPULL, GPIO_AFR_NO_ALTERNATE_FUNCTION);
+	
 	/*------------------- USART initialization -------------------*/
 	
 	/* Configure PB10 as TX and PB11 as RX */
 	GPIOInit(GPIOB, USART3PortB.txPin, GPIO_MODER_ALTERNATE_FUNCTION, GPIO_OTYPER_PUSHPULL, GPIO_OSPEEDR_VERY_HIGH_SPEED, GPIO_PUPDR_NOPULL, AF7);
 	GPIOInit(GPIOB, USART3PortB.rxPin, GPIO_MODER_ALTERNATE_FUNCTION, GPIO_OTYPER_PUSHPULL, GPIO_OSPEEDR_VERY_HIGH_SPEED, GPIO_PUPDR_NOPULL, AF7);	
 	USARTInit(USART3, USART_CR1_8_BITS_DATA, USART_CR2_1_STOP_BIT, USART_CR1_DISABLE_PARITY, USART_CR1_OVER_BY_16, 9600);		
-		
-	//NVICSetup(); 
+	
+	/*--------------- Sys_Tick timer initialization --------------*/
+	/* Configure SysTick interrupt every 1ms */
+	SysTick_Config(SystemCoreClock/1000);
+	
+	NVICSetup(); 
 	printf("Start bootloader\r\n");	
 }
 
+void delay(volatile uint32_t time){
+  ticks = time;
+  while(ticks !=0);
+} 
+
+void SysTick_Handler(void){
+	if(ticks !=0)
+	{
+		ticks --;
+	}	
+}
 
 bool checkApplicationUpdate(void){
-	/* Check if there is hex image is stored and the hex file is different with the current application */
-	
-	return true;
+	/* Detect if user hit the USER BUTTON on STM32F4 */
+	printf("Press the User Button within 10 second to program new image\n");
+	delay(10000); // delay 10s	
+	return isButtonPressed;
 }
 
 

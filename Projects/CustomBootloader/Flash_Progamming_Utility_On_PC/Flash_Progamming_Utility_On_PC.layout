@@ -5,7 +5,7 @@ TopLine=5
 LeftChar=1
 [Editors]
 Order=3,2,0,4,1
-Focused=2
+Focused=3
 [Editor_4]
 CursorCol=1
 CursorRow=5
@@ -22,13 +22,13 @@ CursorRow=208
 TopLine=194
 LeftChar=1
 [Editor_3]
-CursorCol=25
-CursorRow=57
-TopLine=41
+CursorCol=40
+CursorRow=36
+TopLine=1
 LeftChar=1
 [Editor_2]
-CursorCol=70
-CursorRow=54
+CursorCol=1
+CursorRow=35
 TopLine=34
 LeftChar=1
 [Editor_1]

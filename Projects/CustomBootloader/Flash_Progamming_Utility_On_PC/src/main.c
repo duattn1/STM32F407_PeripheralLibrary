@@ -32,6 +32,7 @@ void main(void){
 	
 	while(1){
 		receivedRequest = receiveByte();
+		printf("%c", receivedRequest);
 		if( receivedRequest == BINARY_REQUEST){
 			sendImageData();
 			break;

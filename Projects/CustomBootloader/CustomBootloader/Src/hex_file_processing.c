@@ -57,10 +57,11 @@ hexRecord readHexRecord(uint8_t hex[], uint32_t readIndex){
 
 void programBinaryImage(uint32_t baseAddress, uint32_t length, uint8_t binaryImage[]){	
 	/* Choose sector from 4 to 12 to delete. From Sector 4 is the location of application. */
-	uint8_t i;
-	for(i = 4; i <= 12; i++){
-		FLASHEraseSector(i);
-	}
+//	uint8_t i;
+//	for(i = 4; i <= 12; i++){
+//		FLASHEraseSector(i);
+//	}
+	FLASHEraseSector(4);
 	
 	/* 2. Program Flash*/
 	FLASHWrite(baseAddress, baseAddress + length, binaryImage);		

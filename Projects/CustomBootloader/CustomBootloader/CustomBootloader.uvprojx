@@ -404,6 +404,11 @@
               <FileType>5</FileType>
               <FilePath>.\Inc\hex_file_processing.h</FilePath>
             </File>
+            <File>
+              <FileName>interrupt_controller.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Inc\interrupt_controller.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -438,6 +443,11 @@
               <FileName>hex_file_processing.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Src\hex_file_processing.c</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt_controller.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Src\interrupt_controller.c</FilePath>
             </File>
           </Files>
         </Group>
