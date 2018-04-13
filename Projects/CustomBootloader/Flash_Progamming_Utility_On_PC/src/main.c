@@ -1,3 +1,12 @@
+/** @file main.c
+ *  @brief Main function of the application
+ *
+ *  This is the main place to handle the application
+ *
+ *  @author 	Tran Nhat Duat (duattn)
+ *	@version 	V0.1
+ */ 
+
 #include <Windows.h>
 #include <stdio.h>
 #include <stdint.h>

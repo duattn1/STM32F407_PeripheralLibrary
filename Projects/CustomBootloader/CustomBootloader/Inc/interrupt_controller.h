@@ -38,22 +38,36 @@
 
 /** @brief setup NVIC for all interrupts
  *
- *  @param void.
+ *  @param void
  *
- *  @return void.
+ *  @return void
  */
 void NVICSetup(void);
 
-/** @brief configure all used GPIO interrupts in application.
+/** @brief configure all used GPIO interrupts in application
  *
- *  @param void.
+ *  @param void
  *
- *  @return void.
+ *  @return void
  */
 void GPIOInterruptConfig(void);
 
+/** @brief configure a EXTI interrupt
+ *
+ *  @param extiLine Selection of EXTI Line
+ *  @param risingTriggerEnable Selection to enable/disable rising trigger interrupt detect
+ *
+ *  @return void
+ */
 void extiConfig(uint8_t extiLine, uint8_t risingTriggerEnable);
 
+/** @brief select the source to use the EXTI interrupt
+ *
+ *  @param extiLine Selection of EXTI Line
+ *  @param extiSource Selection of source
+ *
+ *  @return void
+ */
 void extiSourceSelect(uint8_t extiLine, uint8_t extiSource);
 
 #endif /* INTERRUPT_CONTROLLER_H_ */

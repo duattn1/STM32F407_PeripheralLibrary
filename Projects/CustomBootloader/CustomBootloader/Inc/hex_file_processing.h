@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/* structure of a hex record*/
 typedef struct {
 	uint8_t length;
 	uint16_t offset;

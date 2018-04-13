@@ -1,3 +1,12 @@
+/** @file serial_port_communication.c
+ *  @brief Function implementation for the Serial port communication on Windows
+ *
+ *  This contains the function implementation for the Serial port communication on Windows
+ *
+ *  @author 	Tran Nhat Duat (duattn)
+ *	@version 	V0.1
+ */ 
+
 #include "../inc/serial_port_communication.h"
 
 char  ComPortName[] = "\\\\.\\COM4";  /*Name of the Serial port(May Change) to be opened, */
@@ -81,11 +90,11 @@ char* receiveString(void){
 	do
 	{
 		Status = ReadFile(hComm, &TempChar, sizeof(TempChar), &NoBytesRead, NULL);
-		SerialBuffer[i] = TempChar;
-		i++;
+		SerialBuffer[bufferCounter] = TempChar;
+		bufferCounter++;
 	} while (NoBytesRead > 0);
 	
-	i = 0; /* reset buffer counter */	
+	bufferCounter = 0; /* reset buffer counter */	
 	return SerialBuffer;
 }	
 

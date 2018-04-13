@@ -1,3 +1,12 @@
+/** @file hex_parser.c
+ *  @brief Function implementation for the hex parser utility
+ *
+ *  This contains the function implementation for the hex parser utility
+ *
+ *  @author 	Tran Nhat Duat (duattn)
+ *	@version 	V0.1
+ */ 
+
 #include "../inc/hex_parser.h"
 
 uint8_t hexBuffer[10*1024] = {0};

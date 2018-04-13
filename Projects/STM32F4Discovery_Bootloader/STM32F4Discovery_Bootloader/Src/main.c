@@ -41,7 +41,7 @@ void enterSTM32F4Bootloader(void){
 	RCC_DeInit();
 	
 	//2. Disable interrupts
-		__disable_irq();	
+	__disable_irq();	
 	
 	SysTick->CTRL = 0; //reset SysTick timer
 	SysTick->LOAD = 0;
