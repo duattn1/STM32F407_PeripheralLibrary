@@ -11,15 +11,21 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "../inc/serial_port_communication.h"
 #include "../inc/hex_parser.h"
+#include "../inc/crc_calculation.h"
+#include "../inc/serial_port_communication.h"
+
 
 #define ACK							0x79
 #define NACK						0x1F
 #define BINARY_REQUEST				0x01
 
+const uint32_t initialCRC = 0xFFFFFFFF;
 
-void sendImageData(void);
+uint8_t binaryBuffer[5*1024] = {0}; //binary buffer size < hexBuffer/2
+
+void sendBinaryCRC(uint32_t hexFileLength);
+void sendImageData(uint32_t hexFileLength);
 	
 extern uint8_t hexBuffer[10*1024];	
 	
@@ -43,7 +49,14 @@ void main(void){
 		receivedRequest = receiveByte();
 		printf("%c", receivedRequest);
 		if( receivedRequest == BINARY_REQUEST){
-			sendImageData();
+			uint32_t hexFileLength;
+			hexFileLength = readHexFile();
+			
+			//Firstly, send the binary CRC
+			//sendBinaryCRC(hexFileLength);
+			
+			// Send the image data
+			sendImageData(hexFileLength);
 			break;
 		}		
 	}			
@@ -53,23 +66,25 @@ void main(void){
 	_getch();
 } 
 	
-void sendImageData(void){
+void sendBinaryCRC(uint32_t hexFileLength){
+	uint8_t ackValue = 0; 
+	uint32_t binaryCRC;
+	
+	binaryCRC = crc32_update(initialCRC, binaryBuffer, binaryLength);
+	do {
+		/* Send the CRC of binary */				
+  		sendByte(binaryCRC);  	
+				  
+		ackValue = receiveByte();  			
+		Sleep(0);
+	} while (ackValue != ACK);  	
+}	
+	
+void sendImageData(uint32_t hexFileLength){
 	uint32_t readIndex = 0;    
     uint16_t baseAddress = 0;
     uint8_t i;
-    uint32_t hexFileLength;
-    char hexFileLocation[128];
-    
-    do{
-    	printf("Enter hex file location: ");
-    	scanf("%s", hexFileLocation);
-    	
-    	hexFileLength = readHexFile(hexFileLocation);
-	} while (hexFileLength == 0);
-    
-   		
-	
-	
+
 	while(readIndex < hexFileLength){
 		while(hexBuffer[readIndex] != ':' && readIndex < hexFileLength){
    			readIndex++;

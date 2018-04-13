@@ -52,11 +52,11 @@ void testbyteInterpret(void);
 
 /** @brief Read a hex file stored in memory, then store in an array. Finally return the length of the read file
  *
- *  @param hexFile The location on memory of hex file
+ *  @param void
  *
  *  @return uint32_t
  */
-uint32_t readHexFile(char *hexFile);
+uint32_t readHexFile(void);
 
 /** @brief Read a array of hex file and interpret into 1 by 1 hex record
  *

@@ -42,13 +42,18 @@ void testbyteInterpret(void){
 	}    
 }
 
-uint32_t readHexFile(char *hexFile){
+uint32_t readHexFile(void){
 	uint32_t hexFileLength = 0;
 	uint32_t readIndex = 0;	
+	char hexFileLocation[128];
 	
-	hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);    
+	do{
+    	printf("Enter hex file location: ");
+    	scanf("%s", hexFileLocation); 	
+	
+		hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);    
     
-    hFile = CreateFile(hexFile,    	/* open MYFILE.TXT  */
+   		hFile = CreateFile(hexFileLocation,    	/* open MYFILE.TXT  */
                 GENERIC_WRITE | GENERIC_READ,              
                 FILE_SHARE_READ,               		/* share for reading  */
                 NULL,                         	 	/* no security  */
@@ -56,16 +61,18 @@ uint32_t readHexFile(char *hexFile){
                 FILE_ATTRIBUTE_NORMAL,        		/* normal file  */
                 NULL);                        		/* no attr */    
 	
-	status = ReadFile(hFile,hexBuffer,sizeof(hexBuffer),&byteWritten,NULL);    
-	hexFileLength = byteWritten;
-    if(status)
-    {
+		status = ReadFile(hFile,hexBuffer,sizeof(hexBuffer),&byteWritten,NULL);    
+		hexFileLength = byteWritten;
+    	if(status) {
      	/*WriteFile(hStdOut,buffer,sizeof(buffer),NULL,NULL);*/     	  
 			
-    } else {
-    	printf("[Error] Reading file failed\n\n");    
-    	return 0; /* length of 0 to indicate read failed */
-	}
+   		} else {
+    		printf("[Error] Reading file failed\n\n");    
+    		return 0; /* length of 0 to indicate read failed */
+		}
+	
+	} while (hexFileLength == 0);
+	
 	return hexFileLength;
 }
 
@@ -94,4 +101,10 @@ hexRecord readHexRecord(uint8_t hex[], uint32_t readIndex){
 	record.checksum = byteInterpret(hex[readIndex + 9 + 2*record.length], hex[readIndex + 10 + 2*record.length]);   
 
 	return record;
+}
+
+uint32_t foo(void){
+	uint32_t length;
+	 
+	return length;
 }
